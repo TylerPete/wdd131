@@ -1,0 +1,63 @@
+:root {
+    --gray: #333333;
+    --light-gray: #CCCCCC;
+}
+
+* {
+    margin: 0;
+}
+
+.body-section {
+    display: grid;
+    grid-template-rows: 110px 1fr 120px;
+    height: 100vh;
+}
+
+.header-section {
+    background-color: var(--gray);
+    color: white;
+    padding: 0.75rem;
+    display: grid;
+    grid-template-rows: 1fr 1fr;
+}
+
+.nav-list {
+    background-color: black;
+    color: white;
+    display: flex;
+    flex-direction: row;
+    text-decoration: none;
+    justify-content: space-around;
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+    width: 100%;
+}
+
+.nav-list>a {
+    text-decoration: none;
+    color: white;
+    flex: 1;
+    text-align: center;
+}
+
+.main-section {
+    background-color: var(--light-gray);
+    height: 100%;
+    padding: 0.75rem;
+}
+
+.aside-section {
+    background-color: white;
+    float: right;
+    height: 100%;
+    padding: 0.75rem;
+    padding-right: 5rem;
+}
+
+.footer-section {
+    background-color: var(--gray);
+    color: white;
+    text-align: center;
+    height: 100%;
+    padding: 0.75rem;
+}
