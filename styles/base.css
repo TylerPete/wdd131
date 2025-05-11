@@ -7,6 +7,7 @@
 * {
     padding: 0;
     margin: 0;
+    font-family: "Noto Sans";
 }
 
 body {
@@ -44,6 +45,11 @@ body {
     text-decoration: none;
     font-size: 14px;
     color: white;
+}
+
+.menu>a:hover {
+    text-decoration: underline;
+    text-decoration-color: var(--tea-green);
 }
 
 .main-grid {
@@ -106,15 +112,20 @@ body {
 
 .non-header-content2 {
     padding: 1.2rem;
-    align-content: center;
-    color: var(--dark-blue);
-    line-height: 1.75rem;
 }
 
-.non-header-content2:clicked {
-    padding: 1.2rem;
+.non-header-content2>li>a {
+    padding-top: 1.2rem;
     align-content: center;
     color: var(--dark-blue);
+    line-height: 2rem;
+}
+
+.non-header-content2>li>a:visited {
+    padding-top: 1.2rem;
+    align-content: center;
+    color: var(--dark-blue);
+    line-height: 2rem;
 }
 
 .card>h2 {
