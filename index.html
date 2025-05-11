@@ -7,6 +7,7 @@
         <meta name="description" content="WDD 131 - Dynamic Web Fundamentals | Tyler Peterson | Home page">
         <meta author="Tyler Peterson">
         <link rel="stylesheet" href="styles/base.css">
+        <script src="scripts/getdates.js" defer></script>
     </head>
     <body>
         <header>
@@ -22,21 +23,21 @@
             <section class="card">
                 <h2>About Me</h2>
                 <div class="non-header-content">
-                    <img src="images/profile.webp" alt="Photo of Tyler Peterson" width="200"><br>
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quae atque provident eveniet beatae magni deleniti saepe aut aliquam iste illum reprehenderit vitae incidunt nam ratione, tempora rerum quam inventore ipsa quis ullam illo impedit. Quidem assumenda vero minus nam enim. Maiores facere non neque fugiat iure placeat accusantium enim tempora?</p>
-                    <article>
-                        <h3>Iowa, United States</h3>
-                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Debitis aperiam harum iure reiciendis vel dicta temporibus corporis mollitia! Adipisci dolores reiciendis animi inventore consequuntur nobis.</p>
-                        <figure>
-                            <img src="" alt="Iowa flag image" width="200">
+                    <img src="images/profile.jpg" alt="Photo of Tyler Peterson" width="130"><br>
+                    <p>My name is Tyler, and I was born and raised in central Iowa, where I still live now with my own little family. I'm married and my wife and I have two young children--a daughter and a son. I'm currently working full-time at a local retailer while studying in the evenings to get a Bachelor's Degree in Software Development. </p>
+                    <article class="iowa-article">
+                        <h3 class="iowa-heading">Iowa, United States</h3>
+                        <figure class="flag-figure">
+                            <img src="images/Flag_of_Iowa.webp" alt="Iowa flag image" width="120">
                             <figcaption>Official Flag of Iowa</figcaption>
                         </figure>
+                        <p>Iowa is in the center of the United States and is considered to be part of the Midwest region. It is known as the Hawkeye State and is best known for its agricultural output including vast fields of corn.</p>
                     </article>
                 </div>
             </section>
             <section class="card">
                 <h2>Web Dev Resources</h2>
-                <ul>
+                <ul class="non-header-content2">
                     <li><a href="https://www.w3schools.com/">W3 Schools</a></li>
                     <li><a href="">GitHub</a></li>
                     <li><a href="">Squoosh - Image Optimization</a></li>
@@ -48,7 +49,7 @@
         </main>
         <footer>
             <p>
-                <span id="currentyear"></span> | Tyler Peterson | Iowa
+                ©<span id="currentyear"></span> | Tyler Matthew Peterson | Iowa
             </p>
             <p id="lastModified"></p>
         </footer>
