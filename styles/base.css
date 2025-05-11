@@ -108,6 +108,7 @@ body {
     padding: 1.2rem;
     align-content: center;
     color: var(--dark-blue);
+    line-height: 1.75rem;
 }
 
 .non-header-content2:clicked {

@@ -1,12 +1,13 @@
 //meow
 
 const year = document.querySelector("#currentyear");
-const lastModifiedDate = document.querySelector("#lastModified");
+const lastModified = document.querySelector("#lastModified");
 
 const today = new Date();
+let dateLastModified = new Date(document.lastModified);
 
 year.textContent = `${today.getFullYear()}`;
-lastModifiedDate.textContent = `Last Modification: ${new Intl.DateTimeFormat("en-US", 
+lastModified.textContent = `Last Modification: ${new Intl.DateTimeFormat("en-US", 
 {
     dateStyle: "short", timeStyle: "medium"
-}).format(today)}`
+}).format(dateLastModified)}`
