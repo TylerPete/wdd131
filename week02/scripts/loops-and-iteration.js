@@ -13,6 +13,7 @@ while (i < studentReport.length) {
     if (studentReport[i] < LIMIT) {
         console.log(studentReport[i]);
     }
+    i++;
 }
 
 studentReport.forEach(function(element) {
@@ -31,7 +32,9 @@ for (let i in studentReport) {
 const today = new Date();
 options = {weekday: "long"};
 let todayString = new Intl.DateTimeFormat("en-US", options).format(today);
-const output = document.getElementsByTagName("ul");
+
+console.log(`Today is: ${todayString}`);
+console.log("Next six days:");
 
 for (let i = 1; i <= DAYS; i++)
 {
@@ -40,8 +43,4 @@ for (let i = 1; i <= DAYS; i++)
 
     let nextDayString = new Intl.DateTimeFormat("en-US", options).format(nextDay);
     console.log(nextDayString);
-
-    item = document.createElement("li");
-    item.textContent = nextDayString;
-    output[0].appendChild(item);
 }
