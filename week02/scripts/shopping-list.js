@@ -2,9 +2,8 @@
 
 const list = document.querySelector("ul");
 const input = document.querySelector("input");
-const button = document.querySelector("button");
+const addButton = document.querySelector("#add-item");
 
-button.addEventListener("click", addToList);
 function addToList() {
     const stringEntry = input.value;
     input.value = "";
@@ -13,13 +12,17 @@ function addToList() {
     const span = document.createElement("span");
     const deleteButton = document.createElement("button");
 
+    span.textContent = stringEntry;
+    deleteButton.textContent = "Delete"
+
+    list.appendChild(listEntry);
     listEntry.appendChild(span);
     listEntry.appendChild(deleteButton);
 
-    span.textContent = stringEntry;
-    deleteButton.textContent = "Delete"
-    list.appendChild(listEntry);
-
-    deleteButton.addEventListener("click", list.removeChild(listEntry));
+    deleteButton.addEventListener("click", function() {
+        list.removeChild(listEntry)
+    });
     input.focus();
 }
+
+addButton.addEventListener("click", addToList);
