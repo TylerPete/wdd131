@@ -19,7 +19,7 @@ function addToList() {
     listEntry.appendChild(span);
     listEntry.appendChild(deleteButton);
 
-    deleteButton.addEventListener("click", function() {
+    deleteButton.addEventListener("click", function () {
         list.removeChild(listEntry)
     });
     input.focus();
