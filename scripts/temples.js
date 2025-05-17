@@ -19,4 +19,5 @@ const button = document.querySelector("#menu");
 button.addEventListener("click", function () {
     navList.classList.toggle("open");
     menuDiv.classList.toggle("open-menu-title");
+    button.classList.toggle("open");
 });

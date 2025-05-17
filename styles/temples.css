@@ -15,17 +15,23 @@ main {
     margin: 0 auto;
 }
 
+main h1 {
+    text-align: center;
+    margin-top: 10px;
+}
+
 header {
-    background-color: var(--navyish);
+    background-color: var(--dark-blue);
 }
 
 nav {
-    width: 100%;
+    max-width: 100%;
     margin: 0.5rem auto;
 }
 
 .menu-title {
     font-size: 24px;
+    font-weight: bold;
     color: var(--tea-green);
     padding-top: 1rem;
     padding-left: 1rem;
@@ -41,7 +47,7 @@ nav {
 }
 
 #menu.open::before {
-    content: "X";
+    content: "❎";
 }
 
 #menu {
@@ -68,6 +74,7 @@ nav {
     text-decoration: none;
     font-size: 20px;
     width: 100%;
+    color: var(--tea-green);
 }
 
 .navigation li {
@@ -75,9 +82,18 @@ nav {
 }
 
 .navigation li:hover {
-    background-color: var(--dark-blue);
+    background-color: var(--tea-green);
     font-weight: bold;
+    color: var(--dark-blue);
 }
+
+.navigation li:hover:visited {
+    color: var(--dark-blue);
+}
+
+/* .navigation a:hover {
+    color: nav(--dark-blue);
+} */
 
 .navigation {
     display: none;
@@ -91,6 +107,10 @@ nav {
 .navigation a:visited {
     text-decoration: none;
     color: var(--tea-green);
+}
+
+.navigation a:hover:visited {
+    color: var(--dark-blue);
 }
 
 .album-grid {

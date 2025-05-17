@@ -1,1 +1,55 @@
 /*meow*/
+@media screen and (min-width: 640px) {
+    .album-grid {
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    }
+
+    body {
+        max-width: 1200px;
+    }
+
+    header {
+        display: grid;
+        grid-template-columns: 180px 1fr;
+    }
+
+    .menu-title {
+        padding-top: 1.75rem;
+    }
+
+    nav {
+        grid-column: 2 / 3;
+    }
+
+    .navigation {
+        display: flex;
+        flex-direction: row;
+        list-style: none;
+        max-width: 100%;
+        margin-top: 1rem;
+        width: 100%;
+        text-align: center;
+        column-gap: 30px;
+    }
+
+    .navigation a {
+        font-size: 24px;
+    }
+
+    #menu {
+        display: none;
+    }
+
+}
+
+@media screen and (min-width: 840px) {
+    .navigation {
+        column-gap: 60px;
+    }
+}
+
+@media screen and (min-width: 1040px) {
+    .navigation {
+        column-gap: 80px;
+    }
+}
