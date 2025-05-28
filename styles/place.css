@@ -1,7 +1,8 @@
 :root {
-    --dark-blue: #1A2E34;
-    --navyish: #2D5562;
-    --tea-green: #CFE0C3;
+    --left-blue: #0A1F62;
+    --right-red: #D80025;
+    --middle-white: #FFFFFF;
+    --brown-eagle: #69310B;
 }
 
 * {
@@ -11,11 +12,12 @@
 }
 
 header {
-    background-color: var(--dark-blue);
-    color: var(--tea-green);
+    background-color: var(--left-blue);
+    color: var(--middle-white);
     text-align: center;
-    border-bottom: 2rem solid var(--navyish);
-    padding: 1rem;
+    border-bottom: 1.4rem solid var(--right-red);
+    padding: 1.6rem;
+    font-size: 24px;
 }
 
 .hero {
@@ -28,7 +30,7 @@ header {
 }
 
 .hero img {
-    border-bottom: 0.4rem solid var(--navyish);
+    border-bottom: 0.4rem solid var(--right-ride);
 }
 
 main {
@@ -38,8 +40,8 @@ main {
 
 footer {
     text-align: center;
-    background-color: var(--dark-blue);
-    color: var(--tea-green);
+    background-color: var(--left-blue);
+    color: var(--middle-white);
     padding-top: 0.8rem;
     padding-bottom: 0.8rem;
 }
@@ -47,4 +49,11 @@ footer {
 h2 {
     text-align: center;
     padding: 1rem;
+    color: var(--brown-eagle);
+    font-size: 30px;
+}
+
+/* Media query for large size! */
+@media screen and (min-width: 1000px) {
+    
 }
