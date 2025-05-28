@@ -26,34 +26,35 @@
                 <img class="hero-image" src="images/iowa-small.webp" alt="" width="599" height="900">
             </picture>
             <section id="data-section">
-                <!-- Create an extra parent element here
-                 for position: relative so the header can
-                 float to the left -->
-                <h2>Data</h2>
-                <ul>
-                    <li></li>
-                    <li></li>
-                    <li></li>
-                    <li></li>
-                    <li></li>
-                    <li></li>
-                    <li></li>
-                    <li></li>
-                </ul>
+                <div class="smaller-parent">
+                    <h2>Data</h2>
+                    <ul>
+                        <li>Stuff</li>
+                        <li>More stuff</li>
+                        <li></li>
+                        <li>A lot of stuffy stuff</li>
+                        <li></li>
+                        <li></li>
+                        <li></li>
+                        <li></li>
+                    </ul>
+                </div>
             </section>
             <section id="weather-section">
-                <h2>Weather</h2>
-                <picture class="weather-icon">
-                    <source media="(min-width: 800px)" srcset="images/weather.webp">
-                    <source media="(max-width: 799px)" srcset="images/weather.svg">
-                    <img src="images/weather.svg" alt="Partly cloudy weather icon" width="100" height="100">
-                </picture>
-                <ul>
-                    <li></li>
-                    <li></li>
-                    <li></li>
-                    <li></li>
-                </ul>
+                <div class="smaller-parent">
+                    <h2 class="weather-heading">Weather</h2>
+                    <picture class="weather-icon">
+                        <source media="(min-width: 800px)" srcset="images/weather.webp">
+                        <source media="(max-width: 799px)" srcset="images/weather.svg">
+                        <img src="images/weather.svg" alt="Partly cloudy weather icon" width="100" height="100">
+                    </picture>
+                    <ul>
+                        <li>Temperature: <span id="temperature-number">49</span> °F</li>
+                        <li>Conditions: Partly Cloudy</li>
+                        <li>Wind: <span id="wind-number">5</span> mph</li>
+                        <li>Wind Chill: <span id="wind-chill"></span></li>
+                    </ul>
+                    </div>
             </section>   
         </div>
     </main>

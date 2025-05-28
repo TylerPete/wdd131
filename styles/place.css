@@ -55,7 +55,7 @@ h2 {
     text-align: center;
     padding: 1rem;
     color: var(--brown-eagle);
-    font-size: 30px;
+    font-size: 28px;
 }
 
 /* Media query for large size! */
@@ -64,21 +64,53 @@ h2 {
         position: relative;
     }
 
+
+    /* FIX THIS FOR HERO IMAGE SIZING IN LARGE */
+    
+    /* .hero-image {
+        object-fit: cover;
+    } */
+
     #data-section {
         position: absolute;
-        top: 18px;
-        left: 10px;
+        top: 30px;
+        left: 20px;
         background-color: rgba(255, 255, 255, 0.8);
+    }
+
+    .smaller-parent {
+        position: relative;
     }
 
     h2 {
         background-color: rgba(216, 0, 37, 0.9);
+        position: absolute;
+        left: -10px;
+        top: 8px;
+        width: 75%;
+        text-align: left;
+        color: var(--middle-white);
+    }
+
+    ul {
+        padding-top: 5rem;
+        list-style: none;
+        padding-right: 3rem;
     }
 
     #weather-section {
         position: absolute;
-        bottom: 18px;
-        right: 10px;
+        bottom: 25px;
+        right: 40px;
         background-color: rgba(255, 255, 255, 0.8);
+    }
+
+    .weather-icon {
+        display: none;
+    }
+
+    .weather-heading::after {
+        content: "   ⛅";
+        white-space: pre-wrap;
     }
 }
