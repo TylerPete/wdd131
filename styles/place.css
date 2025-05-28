@@ -1,1 +1,31 @@
-/*meow*/
+:root {
+    --dark-blue: #1A2E34;
+    --navyish: #2D5562;
+    --tea-green: #CFE0C3;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    font-family: "Ancizar Serif";
+}
+
+header {
+    background-color: var(--dark-blue);
+    color: var(--tea-green);
+    text-align: center;
+    border-bottom: 1rem solid var(--navyish);
+    padding: 1rem;
+}
+
+.hero {
+    position: static;
+}
+
+footer {
+    text-align: center;
+    background-color: var(--dark-blue);
+    color: var(--tea-green);
+    padding-top: 0.8rem;
+    padding-bottom: 0.8rem;
+}
