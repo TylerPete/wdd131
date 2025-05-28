@@ -24,18 +24,23 @@ header {
     position: static;
 }
 
-.hero picture, .hero img {
+.hero-picture, .hero-image {
     width: 100%;
     height: auto;
 }
 
-.hero img {
-    border-bottom: 0.4rem solid var(--right-ride);
+.hero-image {
+    border-bottom: 0.4rem solid var(--right-red);
 }
 
 main {
     width: 100%;
     margin: 0 auto;
+}
+
+.weather-icon {
+    display: block;
+    text-align: center;
 }
 
 footer {
@@ -54,6 +59,26 @@ h2 {
 }
 
 /* Media query for large size! */
-@media screen and (min-width: 1000px) {
-    
+@media screen and (min-width: 800px) {
+    .hero {
+        position: relative;
+    }
+
+    #data-section {
+        position: absolute;
+        top: 18px;
+        left: 10px;
+        background-color: rgba(255, 255, 255, 0.8);
+    }
+
+    h2 {
+        background-color: rgba(216, 0, 37, 0.9);
+    }
+
+    #weather-section {
+        position: absolute;
+        bottom: 18px;
+        right: 10px;
+        background-color: rgba(255, 255, 255, 0.8);
+    }
 }
