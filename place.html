@@ -1,10 +1,12 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="author" content="Tyler Matthew Peterson">
-    <meta name="description" content="A page with information about Iowa to practice responsive images, JavaScript functions, etc.">
+    <meta name="description"
+        content="A page with information about Iowa to practice responsive images, JavaScript functions, etc.">
     <title>Iowa Page</title>
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -14,6 +16,7 @@
     <link rel="stylesheet" href="styles/place.css">
     <script src="scripts/place.js" defer></script>
 </head>
+
 <body>
     <header>
         <h1>Iowa</h1>
@@ -21,22 +24,22 @@
     <main>
         <div class="hero">
             <picture class="hero-picture">
-                <source media="(min-width: 800px)" srcset="images/iowa-large.webp"></src>
-                <source media="(max-width: 799px)" srcset="images/iowa-small.webp"></src>
+                <source media="(min-width: 800px)" srcset="images/iowa-large.webp">
+                <source media="(max-width: 799px)" srcset="images/iowa-small.webp">
                 <img class="hero-image" src="images/iowa-small.webp" alt="" width="599" height="900">
             </picture>
             <section id="data-section">
                 <div class="smaller-parent">
                     <h2>Data</h2>
                     <ul>
-                        <li>Stuff</li>
-                        <li>More stuff</li>
-                        <li></li>
-                        <li>A lot of stuffy stuff</li>
-                        <li></li>
-                        <li></li>
-                        <li></li>
-                        <li></li>
+                        <li><span class="bold-category">Area: </span>56,273 sq mi</li>
+                        <li><span class="bold-category">Population: </span>3,190,369</li>
+                        <li><span class="bold-category">Capital: </span>Des Moines</li>
+                        <li><span class="bold-category">Language: </span>English</li>
+                        <li><span class="bold-category">Currency: </span>US Dollar</li>
+                        <li><span class="bold-category">Time Zone: </span>UTC-6</li>
+                        <li><span class="bold-category">Calling Codes: </span>319, 515, 563, 641, 712</li>
+                        <li><span class="bold-category">Internet TLD: </span>.us</li>
                     </ul>
                 </div>
             </section>
@@ -54,8 +57,8 @@
                         <li>Wind: <span id="wind-number">5</span> mph</li>
                         <li>Wind Chill: <span id="wind-chill"></span></li>
                     </ul>
-                    </div>
-            </section>   
+                </div>
+            </section>
         </div>
     </main>
     <footer class="page-footer">
@@ -65,4 +68,5 @@
         <p id="lastModified"></p>
     </footer>
 </body>
+
 </html>
