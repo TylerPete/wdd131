@@ -4,7 +4,7 @@ let aCourse = {
   credits: 2,
   sections: [
     { sectionNumber: 1, enrolled: 90, instructor: "Mr. Teacher"},
-    { sectionNumber: 2, enrolled: 85, instructor: "Mrs. Professor"}
+    { sectionNumber: 2, enrolled: 85, instructor: "Mrs. Professor"} 
   ]
 };
 
