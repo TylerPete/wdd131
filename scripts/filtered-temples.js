@@ -76,8 +76,7 @@ const temples = [
     location: "Mexico City, Mexico",
     dedicated: "1983, December, 2",
     area: 116642,
-    imageUrl:
-    "https://content.churchofjesuschrist.org/templesldsorg/bc/Temples/photo-galleries/mexico-city-mexico/400x250/mexico-city-temple-exterior-1518361-wallpaper.jpg"
+    imageUrl: "https://content.churchofjesuschrist.org/templesldsorg/bc/Temples/photo-galleries/mexico-city-mexico/400x250/mexico-city-temple-exterior-1518361-wallpaper.jpg"
   },
   {
     templeName: "Winter Quarters Nebraska",
@@ -91,20 +90,33 @@ const temples = [
     location: "Nauvoo, Illinois, United States",
     dedicated: "2002, May, 27",
     area: 54000,
-    imageURL: "https://churchofjesuschristtemples.org/assets/img/temples/nauvoo-illinois-temple/nauvoo-illinois-temple-50576.jpg"
+    imageUrl: "https://churchofjesuschristtemples.org/assets/img/temples/nauvoo-illinois-temple/nauvoo-illinois-temple-50576.jpg"
   },
   {
     templeName: "Chicago Illinois",
     location: "Chicago, Illinois, United States",
     dedicated: "1985, August, 9",
     area: 37062,
-    imageURL: "https://churchofjesuschristtemples.org/assets/img/temples/chicago-illinois-temple/chicago-illinois-temple-58403.jpg"
+    imageUrl: "https://churchofjesuschristtemples.org/assets/img/temples/chicago-illinois-temple/chicago-illinois-temple-58403.jpg"
   }
 ];
 
 function createTempleCardHTML(temple)
 {
-    let html = ``;
+    let html = `<div class="temple-card">\n<h3>${temple.templeName}</h3>\n<ul>\n`;
+
+    let values = ["location", "dedicated", "area"];
+    let listElementArray = values.map(value => value = `<li><span>LOCATION: </span>${temple[value]}</li>`);
+
+    html += `${listElementArray.join("\n")}\n</ul>\n<img src="${temple.imageUrl}" alt="${temple.templeName}">\n</div>`;
+
+    return html;
 }
 
-let templeCardsHTMLArray = temples.map();
+let templeCardsHTMLArray = temples.map(createTempleCardHTML);
+let finalHTML = templeCardsHTMLArray.join("\n");
+
+const albumGridElement = document.querySelector(".album-grid");
+albumGridElement.innerHTML = finalHTML;
+
+console.log(albumGridElement.innerHTML);
