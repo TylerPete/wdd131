@@ -102,3 +102,9 @@ const temples = [
   }
 ];
 
+function createTempleCardHTML(temple)
+{
+    let html = ``;
+}
+
+let templeCardsHTMLArray = temples.map();
