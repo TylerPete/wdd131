@@ -118,5 +118,3 @@ let finalHTML = templeCardsHTMLArray.join("\n");
 
 const albumGridElement = document.querySelector(".album-grid");
 albumGridElement.innerHTML = finalHTML;
-
-console.log(albumGridElement.innerHTML);
