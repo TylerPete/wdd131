@@ -68,7 +68,7 @@ nav {
     text-align: center;
 }
 
-.navigation li {
+.navigation a {
     padding: 0.45rem;
     text-decoration: none;
     font-size: 20px;
@@ -76,13 +76,13 @@ nav {
     color: var(--tea-green);
 }
 
-.navigation li:hover {
+.navigation a:hover {
     background-color: var(--tea-green);
     font-weight: bold;
     color: var(--dark-blue);
 }
 
-.navigation li:hover:visited {
+.navigation a:hover:visited {
     color: var(--dark-blue);
 }
 
@@ -95,12 +95,12 @@ nav {
     display: block;
 }
 
-.navigation li:visited {
+.navigation a:visited {
     text-decoration: none;
     color: var(--tea-green);
 }
 
-.navigation li:hover:visited {
+.navigation a:hover:visited {
     color: var(--dark-blue);
 }
 
@@ -186,7 +186,7 @@ footer {
         column-gap: 30px;
     }
 
-    .navigation li {
+    .navigation a {
         font-size: 24px;
     }
 
