@@ -68,15 +68,12 @@ nav {
     text-align: center;
 }
 
-.navigation a {
+.navigation li {
+    padding: 0.45rem;
     text-decoration: none;
     font-size: 20px;
     width: 100%;
     color: var(--tea-green);
-}
-
-.navigation li {
-    padding: 0.45rem;
 }
 
 .navigation li:hover {
@@ -98,12 +95,12 @@ nav {
     display: block;
 }
 
-.navigation a:visited {
+.navigation li:visited {
     text-decoration: none;
     color: var(--tea-green);
 }
 
-.navigation a:hover:visited {
+.navigation li:hover:visited {
     color: var(--dark-blue);
 }
 
@@ -189,7 +186,7 @@ footer {
         column-gap: 30px;
     }
 
-    .navigation a {
+    .navigation li {
         font-size: 24px;
     }
 
