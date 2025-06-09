@@ -15,22 +15,22 @@
 @font-face {
     font-family: 'Pokemon B/W';
     src: url("../fonts/pokemon-b-w.otf.woff2/pokemon-b-w.otf.woff2") format("woff2"),
-         url("../fonts/pokemon-b-w.ttf/pokemon-b-w.ttf") format("truetype");
+        url("../fonts/pokemon-b-w.ttf/pokemon-b-w.ttf") format("truetype");
 }
 
 section {
     border: 2px solid var(--tog-blue);
     margin: 1rem;
     border-radius: 6px;
-    padding: 0.5rem;
+    padding: 1rem;
     background-color: var(--tog-cream);
 }
 
 h1 {
-    color: var(--tog-blue);
+    color: var(--tog-cream);
     display: block;
     width: 100%;
-    background-color: var(--tog-cream);
+    background-color: var(--tog-blue);
     padding: 1.5rem;
     border-bottom: 1.2rem solid var(--tog-red);
 }
@@ -49,8 +49,50 @@ section>p {
     background-color: transparent;
 }
 
-section>ul>li, section>ul {
+section>ul>li,
+section>ul {
     background-color: transparent;
     font-family: "Pokemon B/W";
     font-size: 1.3rem;
+}
+
+span {
+    font-family: "Pokemon B/W";
+    font-size: 1.3rem;
+    padding: 0.2rem;
+    margin: 0.1rem;
+}
+
+#blue {
+    background-color: var(--tog-blue);
+    color: var(--white);
+}
+
+#cream {
+    background-color: var(--tog-cream);
+    border: 1px solid var(--tog-black);
+}
+
+#red {
+    background-color: var(--tog-red);
+    color: var(--white);
+}
+
+#black {
+    background-color: var(--tog-black);
+    color: var(--white);
+}
+
+#white {
+    background-color: var(--white);
+    border: 1px solid var(--tog-black);
+}
+
+#palette-list,
+#font-list {
+    padding-top: 1rem;
+}
+
+li {
+    margin-bottom: 0.5rem;
 }
