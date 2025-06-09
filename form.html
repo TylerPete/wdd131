@@ -18,7 +18,29 @@
 
     </header>
     <main>
+        <h1>REPLACE THIS HEADING</h1>
+        <form method="get" action="review.html">
 
+            <!--any legend elements?-->
+
+            <label>Product Name
+                <select name="product" id="product" required>
+                    <option selected disabled>Select a Product...</option>
+                    <!--Remaining options created dynamically using provided product array-->
+                </select>
+            </label>
+            <label id="rating">Overall Rating
+                <input type="radio" name="star-rating" value="1" required>☆</input>
+                <input type="radio" name="star-rating" value="2" required>☆☆</input>
+                <input type="radio" name="star-rating" value="3" required>☆☆☆</input>
+                <input type="radio" name="star-rating" value="4" required>☆☆☆☆</input>
+                <input type="radio" name="star-rating" value="5" required>☆☆☆☆☆</input>
+            </label>
+            <label>Date of Installation
+                <input type="date" name="date"></input>
+            </label>
+            
+        </form>
     </main>
     <footer class="page-footer">
         <p>
