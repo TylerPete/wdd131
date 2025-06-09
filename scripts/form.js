@@ -26,6 +26,7 @@ const products = [
         averagerating: 5.0
     }
 ];
+const productSelect = document.querySelector("#product");
 
 const year = document.querySelector("#currentyear");
 const lastModified = document.querySelector("#lastModified");
@@ -42,3 +43,15 @@ lastModified.textContent = `Last Modification: ${new Intl.DateTimeFormat("en-US"
 
 //Code to generate <option> children elements for <select> element...
 //  ...see "Product Name" portion of directions
+
+products.forEach(product => createOptionElement(product));
+
+
+function createOptionElement(product) {
+    let newOption = document.createElement("option");
+    newOption.value = product.name;
+    newOption.id = product.id;
+    newOption.textContent = product.name;
+
+    productSelect.appendChild(newOption);
+}
