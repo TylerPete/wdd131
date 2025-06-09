@@ -39,7 +39,20 @@
             <label>Date of Installation
                 <input type="date" name="date" id="date" required></input>
             </label>
+            <label>Which features did you find useful in the product?<br><span id="italic">(Check all that apply)</span>
+                <input type="checkbox" name="durability" id="durability" value="yes">Durability</input>
+                <input type="checkbox" name="ease" id="ease" value="yes">Ease of Use</input>
+                <input type="checkbox" name="performance" id="performance" value="yes">Performance</input>
+                <input type="checkbox" name="design" id="design" value="yes">Design</input>
+            </label>
+            <label>Written Review <span class="optional">(Optional)</span>
+                <input type="textarea" name="review" id="review"></input>
+            </label>
+            <label>Your Name <span class="optional">(Optional)</span>
+                <input type="text" name="name" id="name"></input>
+            </label>
 
+            <input type="submit" value="Post Review">
         </form>
     </main>
     <footer class="page-footer">
