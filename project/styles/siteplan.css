@@ -9,13 +9,21 @@
 * {
     background-color: var(--white);
     margin: 0;
-    font-family: Lato;
+    font-family: Lato, sans-serif;
 }
 
 @font-face {
-    font-family: pokemonBW;
-    src: url("fonts/pokemon-b-w.otf.woff2/pokemon-b-w.otf.woff2") format("woff2"),
-         url("fonts/pokemon-b-w.ttf/pokemon-b-w.ttf") format("truetype");
+    font-family: 'Pokemon B/W';
+    src: url("../fonts/pokemon-b-w.otf.woff2/pokemon-b-w.otf.woff2") format("woff2"),
+         url("../fonts/pokemon-b-w.ttf/pokemon-b-w.ttf") format("truetype");
+}
+
+section {
+    border: 2px solid var(--tog-blue);
+    margin: 1rem;
+    border-radius: 6px;
+    padding: 0.5rem;
+    background-color: var(--tog-cream);
 }
 
 h1 {
@@ -30,5 +38,19 @@ h1 {
 h2 {
     color: var(--tog-black);
     font-size: 0.8;
-    padding: 1rem;
+    padding-bottom: 1rem;
+    background-color: transparent;
+}
+
+section>p {
+    font-family: 'Pokemon B/W';
+    padding-left: 1rem;
+    font-size: 1.3rem;
+    background-color: transparent;
+}
+
+section>ul>li, section>ul {
+    background-color: transparent;
+    font-family: "Pokemon B/W";
+    font-size: 1.3rem;
 }
