@@ -14,7 +14,7 @@ year.textContent = `${today.getFullYear()}`;
 lastModified.textContent = `Last Modification: ${new Intl.DateTimeFormat("en-US",
     {
         dateStyle: "short", timeStyle: "medium"
-    }).format(dateLastModified)}`
+    }).format(dateLastModified)}`;
 
 const tempElement = document.querySelector("#temperature-number");
 const tempNum = parseFloat(tempElement.textContent);
