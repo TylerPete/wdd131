@@ -93,7 +93,7 @@ input[type="checkbox"] {
 .optional {
     display: inline;
     font-size: 0.8rem;
-    color: blue;
+    font-style: italic;
 }
 
 #fieldset2>label {
