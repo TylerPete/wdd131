@@ -1,1 +1,119 @@
-/* Meow */
+:root {
+    --dark-purple: #4A1942;
+    --byzantium: #dda0c6;
+    --platinum: #EAEAEA;
+    --black: #000000;
+}
+
+* {
+    font-family: Rubik;
+    display: block;
+    background-color: var(--byzantium);
+    color: var(--black);
+}
+
+body {
+    width: 100%;
+    max-width: 800px;
+}
+
+fieldset {
+    margin: 1rem 0;
+    padding: 1rem;
+}
+
+legend {
+    font-size: 1.1rem;
+    font-style: italic;
+    padding: 0 0.6rem;
+}
+
+header,
+h1 {
+    background-color: var(--dark-purple);
+    width: 100%;
+    margin: 0;
+    padding: 0.35rem;
+    color: var(--platinum);
+    text-align: center;
+}
+
+div {
+    margin-top: 1.25rem;
+}
+
+.rating-flex {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+    margin-top: 0.25rem;
+}
+
+.rating-flex>label {
+    text-align: center;
+}
+
+select {
+    margin-top: 0.25rem;
+    height: 1.6rem;
+}
+
+input[type="date"],
+input[type="text"] {
+    height: 1.6rem;
+}
+
+input[type="radio"] {
+    margin: 0 auto;
+}
+
+input[type="checkbox"] {
+    display: inline;
+}
+
+.rating-flex,
+textarea,
+input[type="text"],
+input[type="date"],
+select {
+    width: 98%;
+    max-width: 500px;
+}
+
+#italic {
+    margin-bottom: 0.3rem;
+    font-style: italic;
+}
+
+input[type="checkbox"] {
+    margin: 0.5rem 0.25rem;
+}
+
+.optional {
+    display: inline;
+    font-size: 0.8rem;
+    color: blue;
+}
+
+#fieldset2>label {
+    margin-bottom: 1rem;
+}
+
+#fieldset2>label>input[type="text"],
+#fieldset2>label>textarea {
+    margin-top: 0.5rem;
+    padding: 0.2rem;
+}
+
+textarea {
+    height: 5rem;
+}
+
+select:required,
+input:required {
+    border-left: solid 6px red;
+}
+
+select:required:valid,
+input:required:valid {
+    border-left: solid 4px green;
+}

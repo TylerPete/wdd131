@@ -9,6 +9,10 @@
         content="A Product Review Form designed in accordance with assignment specifications for Week 5 of WDD131. Intended to demonstrate proper structure, styling, and dynamic content with HTML forms.">
     <title>Product Review Form</title>
 
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300..900;1,300..900&display=swap"
+        rel="stylesheet">
     <link rel="stylesheet" href="styles/form.css">
     <script src="scripts/form.js" defer></script>
 </head>
@@ -19,43 +23,50 @@
     </header>
     <main>
         <form method="get" action="review.html">
+            <fieldset>
+                <legend>Product Details</legend>
+                <label>Product Name*
+                    <select name="product" id="product" required>
+                        <option selected disabled>Select a Product...</option>
+                        <!--Remaining options created dynamically using provided product array-->
+                    </select>
+                </label>
 
-            <!--any legend elements?-->
+                <div>Overall Rating*</div>
+                <div class="rating-flex">
+                    <label class="star-label">☆<input type="radio" name="star-rating" value="1" required></label>
+                    <label class="star-label">☆☆<input type="radio" name="star-rating" value="2" required></label>
+                    <label class="star-label">☆☆☆<input type="radio" name="star-rating" value="3" required></label>
+                    <label class="star-label">☆☆☆☆<input type="radio" name="star-rating" value="4" required></label>
+                    <label class="star-label">☆☆☆☆☆<input type="radio" name="star-rating" value="5" required></label>
+                </div>
 
-            <label>Product Name
-                <select name="product" id="product" required>
-                    <option selected disabled>Select a Product...</option>
-                    <!--Remaining options created dynamically using provided product array-->
-                </select>
-            </label>
+                <div>Date of Installation*</div>
+                <label>
+                    <input type="date" name="date" id="date" required>
+                </label>
 
-            <div>Overall Rating</div>
-            <label>☆<input type="radio" name="star-rating" value="1" required></label>
-            <label>☆☆<input type="radio" name="star-rating" value="2" required></label>
-            <label>☆☆☆<input type="radio" name="star-rating" value="3" required></label>
-            <label>☆☆☆☆<input type="radio" name="star-rating" value="4" required></label>
-            <label>☆☆☆☆☆<input type="radio" name="star-rating" value="5" required></label>
+                <div>Which features did you find useful in the product?<br><span id="italic">(Check all that
+                        apply)</span>
+                </div>
+                <label><input type="checkbox" name="durability" id="durability" value="yes">Durability</label>
+                <label><input type="checkbox" name="ease" id="ease" value="yes">Ease of Use</label>
+                <label><input type="checkbox" name="performance" id="performance" value="yes">Performance</label>
+                <label><input type="checkbox" name="design" id="design" value="yes">Design</label>
+            </fieldset>
 
-            <label>Date of Installation
-                <input type="date" name="date" id="date" required>
-            </label>
+            <fieldset id="fieldset2">
+                <legend>Additional Details</legend>
+                <label>Written Review <span class="optional">(Optional)</span>
+                    <textarea name="review" id="review"></textarea>
+                </label>
 
-            <div>Which features did you find useful in the product?<br><span id="italic">(Check all that apply)</span>
-            </div>
-            <label><input type="checkbox" name="durability" id="durability" value="yes">Durability</label>
-            <label><input type="checkbox" name="ease" id="ease" value="yes">Ease of Use</label>
-            <label><input type="checkbox" name="performance" id="performance" value="yes">Performance</label>
-            <label><input type="checkbox" name="design" id="design" value="yes">Design</label>
+                <label>Your Name <span class="optional">(Optional)</span>
+                    <input type="text" name="name" id="name">
+                </label>
 
-            <label>Written Review <span class="optional">(Optional)</span>
-                <textarea name="review" id="review"></textarea>
-            </label>
-
-            <label>Your Name <span class="optional">(Optional)</span>
-                <input type="text" name="name" id="name">
-            </label>
-
-            <input type="submit" value="Post Review">
+                <input type="submit" value="Post Review">
+            </fieldset>
         </form>
     </main>
     <footer class="page-footer">
