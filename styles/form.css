@@ -149,3 +149,7 @@ footer>p>span,
     background-color: var(--dark-purple);
     color: var(--platinum);
 }
+
+#numReviews {
+    display: inline;
+}
