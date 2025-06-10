@@ -49,8 +49,7 @@ products.forEach(product => createOptionElement(product));
 
 function createOptionElement(product) {
     let newOption = document.createElement("option");
-    newOption.value = product.name;
-    newOption.id = product.id;
+    newOption.value = product.id;
     newOption.textContent = product.name;
 
     productSelect.appendChild(newOption);

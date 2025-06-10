@@ -19,7 +19,7 @@ body {
 }
 
 fieldset {
-    margin: 1rem 0.5rem 1rem 0;
+    margin: 1rem 0.5rem 0.5rem 0;
     padding: 1rem;
 }
 
@@ -134,9 +134,18 @@ input[type="submit"] {
     width: 100%;
     max-width: 800px;
     text-align: center;
+    background-color: var(--dark-purple);
+    padding: 0.05rem;
+}
+
+footer>p {
+    background-color: var(--dark-purple);
+    color: var(--platinum);
 }
 
 footer>p>span,
 #currentYear {
     display: inline;
+    background-color: var(--dark-purple);
+    color: var(--platinum);
 }
