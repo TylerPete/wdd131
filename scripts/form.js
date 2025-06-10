@@ -46,11 +46,22 @@ lastModified.textContent = `Last Modification: ${new Intl.DateTimeFormat("en-US"
 
 products.forEach(product => createOptionElement(product));
 
-
 function createOptionElement(product) {
     let newOption = document.createElement("option");
     newOption.value = product.id;
     newOption.textContent = product.name;
 
     productSelect.appendChild(newOption);
+}
+
+//code for form submission counter
+
+let numSubmits = Number(localStorage.getItem("numSubmits-ls")) || 0;
+
+const theForm = document.querySelector("form");
+theForm.addEventListener("submit", incrementSubmitCounter);
+
+function incrementSubmitCounter() {
+    numSubmits++;
+    localStorage.setItem("numSubmits-ls", numSubmits);
 }

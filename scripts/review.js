@@ -11,3 +11,9 @@ lastModified.textContent = `Last Modification: ${new Intl.DateTimeFormat("en-US"
     {
         dateStyle: "short", timeStyle: "medium"
     }).format(dateLastModified)}`;
+
+//code for display the number of submissions
+let numSubmits = Number(localStorage.getItem("numSubmits-ls")) || 0;
+
+const numReviewsElement = document.querySelector("#numReviews");
+numReviewsElement.textContent = `${numSubmits}`;
