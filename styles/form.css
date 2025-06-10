@@ -10,6 +10,7 @@
     display: block;
     background-color: var(--byzantium);
     color: var(--black);
+    box-sizing: border-box;
 }
 
 body {
@@ -18,7 +19,7 @@ body {
 }
 
 fieldset {
-    margin: 1rem 0;
+    margin: 1rem 0.5rem 1rem 0;
     padding: 1rem;
 }
 
@@ -74,7 +75,8 @@ input[type="checkbox"] {
 textarea,
 input[type="text"],
 input[type="date"],
-select {
+select,
+input[type="submit"] {
     width: 98%;
     max-width: 500px;
 }
@@ -116,4 +118,25 @@ input:required {
 select:required:valid,
 input:required:valid {
     border-left: solid 4px green;
+}
+
+input[type="submit"] {
+    border-radius: 6px;
+    border: none;
+    background-image: linear-gradient(#111111, var(--dark-purple));
+    color: var(--platinum);
+    font-weight: bold;
+    padding: 0.5rem;
+    box-shadow: 2px 2px 6px #999;
+}
+
+.page-footer {
+    width: 100%;
+    max-width: 800px;
+    text-align: center;
+}
+
+footer>p>span,
+#currentYear {
+    display: inline;
 }
