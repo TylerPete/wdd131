@@ -153,3 +153,7 @@ footer>p>span,
 #numReviews {
     display: inline;
 }
+
+title {
+    display: none;
+}
