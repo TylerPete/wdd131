@@ -29,7 +29,7 @@ header {
 }
 
 h1 {
-    font-size: 26px;
+    font-size: clamp(6px, 5vw, 40px);  /*DOUBLE CHECK THIS ON MOBILE*/
     color: var(--tog-cream);
     display: block;
     max-width: 100%;
