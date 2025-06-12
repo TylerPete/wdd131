@@ -23,7 +23,13 @@ body {
     max-width: 100%;
 }
 
+header {
+    background-color: var(--tog-blue);
+    display: flex;
+}
+
 h1 {
+    font-size: 26px;
     color: var(--tog-cream);
     display: block;
     max-width: 100%;
@@ -31,15 +37,14 @@ h1 {
     padding: 1.5rem;
 }
 
-
 nav {
     max-width: 100%;
 }
 
 #menu {
-    position: absolute;
+    /* position: absolute;
     top: 1rem;
-    right: 1rem;
+    right: 1rem; */
     background-color: var(--tog-blue);
     color: var(--tog-cream);
     font-size: 2rem;
