@@ -1,0 +1,80 @@
+:root {
+    --tog-blue: #4464a4;
+    --tog-cream: #F2ECE6;
+    --tog-red: #BF3D3D;
+    --tog-dark-red: #862b2b;
+    --tog-black: #0F1A2A;
+    --white: #ffffff;
+}
+
+* {
+    background-color: var(--white);
+    margin: 0 auto;
+    font-family: Lato, sans-serif;
+}
+
+@font-face {
+    font-family: 'Pokemon B/W';
+    src: url("../fonts/pokemon-b-w.otf.woff2/pokemon-b-w.otf.woff2") format("woff2"),
+        url("../fonts/pokemon-b-w.ttf/pokemon-b-w.ttf") format("truetype");
+}
+
+body {
+    max-width: 100%;
+}
+
+h1 {
+    color: var(--tog-cream);
+    display: block;
+    max-width: 100%;
+    background-color: var(--tog-blue);
+    padding: 1.5rem;
+}
+
+
+nav {
+    max-width: 100%;
+}
+
+#menu {
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    background-color: var(--tog-blue);
+    color: var(--tog-cream);
+    font-size: 2rem;
+    border: none;
+}
+
+#menu::before {
+    content: "☰";
+}
+
+.navigation {
+    /* display: none; */
+    width: 70%;
+    max-width: 350px;
+    list-style: none;
+    text-align: right;
+    float: right;
+}
+
+.navigation li {
+    padding: 0.45rem 0;
+    text-decoration: none;
+    font-size: 20px;
+    width: 100%;
+    color: var(--tog-cream);
+    background-color: var(--tog-red);
+    white-space: pre;
+}
+
+.navigation li:hover {
+    background-color: var(--tog-dark-red);
+    font-weight: bold;
+}
+
+/* Non-mobile CSS (for larger screens) below:  */
+@media screen and (min-width: 640px) {
+
+}
