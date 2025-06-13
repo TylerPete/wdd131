@@ -129,6 +129,8 @@ nav {
     height: auto;
     max-height: 22px;
     max-width: 100px;
+    /* min-width: 0;  NEED A BETTER OPTION to evenly squeeze all icons vertically
+    min-height: 0; */
     transition: transform 0.15s ease-in-out;
 }
 
