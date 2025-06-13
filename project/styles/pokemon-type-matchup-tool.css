@@ -26,16 +26,18 @@ body {
 header {
     background-color: var(--tog-blue);
     display: flex;
+    justify-content: space-between;
 }
 
 h1 {
-    font-size: clamp(6px, 5vw, 40px);  /*DOUBLE CHECK THIS ON MOBILE*/
+    font-size: clamp(6px, 5vw, 32px);
     color: var(--tog-cream);
     display: block;
     max-width: 100%;
     background-color: var(--tog-blue);
     padding: 1.5rem;
     white-space: nowrap;
+    margin-right: auto;
 }
 
 nav {
@@ -43,9 +45,6 @@ nav {
 }
 
 #menu {
-    /* position: absolute;
-    top: 1rem;
-    right: 1rem; */
     background-color: var(--tog-blue);
     color: var(--tog-cream);
     font-size: 2rem;
@@ -57,7 +56,7 @@ nav {
 }
 
 .navigation {
-    /* display: none; */
+    display: none;
     width: 70%;
     max-width: 350px;
     list-style: none;
