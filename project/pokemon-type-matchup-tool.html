@@ -5,14 +5,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="author" content="Tyler Peterson">
     <meta name="description" content="The home page for the Pokemon Type Matchup Tool--a website designed as a resource for Pokemon players and fans looking to understand how Pokemon type advantages work.">
-    <title>Pokemon Type Matchup Tool | Home</title>
+    <title>Pokémon Type Matchup Tool | Home</title>
 
     <link rel="stylesheet" href="styles/pokemon-type-matchup-tool.css">
     <script src="scripts/pokemon-type-matchup-tool.js" defer></script>
 </head>
 <body>
     <header>
-        <h1>Pokemon Type Matchup Tool</h1>
+        <h1>Pokémon Type Matchup Tool</h1>
         <button id="menu" title="Navigation menu hamburger button"></button>
     </header>
     <main>
@@ -23,6 +23,48 @@
                 <li>Calculator   </li>
             </ul>
         </nav>
+        <div class="normal-div">
+            <h2>What are Pokémon types?</h2>
+            <p>A Pokémon's (or Pokémon move's) type is a classification that determines its strengths and weaknesses against Pokémon or moves of other types. It is usually related to the Pokémon's physical appearance, design, and/or behavior.</p>
+        </div>
+        
+        <div id="eighteen-types-container">
+            <div id="eighteen-types-paragraph" class="normal-div">
+                <h2 id="eighteen-types-heading">How many types are there, and what are they?</h2>
+                <p>There are 18 different types of Pokémon, which are listed below. Click on one or two type(s) to see an example of a Pokémon of the type(s) selected.</p>
+            </div>
+            <div id="type-grid">
+                <img src="images/type-icons/BugIC.png">
+                <img src="images/type-icons/DarkIC.png">
+                <img src="images/type-icons/DragonIC.png">
+                <img src="images/type-icons/ElectricIC.png">
+                <img src="images/type-icons/FairyIC.png">
+                <img src="images/type-icons/FightingIC.png">
+                <img src="images/type-icons/FireIC.png">
+                <img src="images/type-icons/FlyingIC.png">
+                <img src="images/type-icons/GhostIC.png">
+                <img src="images/type-icons/GrassIC.png">
+                <img src="images/type-icons/GroundIC.png">
+                <img src="images/type-icons/IceIC.png">
+                <img src="images/type-icons/NormalIC.png">
+                <img src="images/type-icons/PoisonIC.png">
+                <img src="images/type-icons/PsychicIC.png">
+                <img src="images/type-icons/RockIC.png">
+                <img src="images/type-icons/SteelIC.png">
+                <img src="images/type-icons/WaterIC.png">
+            </div>
+            <picture id="pokemon-example">
+                <source>
+                <source>
+                <img>
+            </picture>
+        </div>
+
+        <div class="normal-div">
+            <h2>Learn how different Pokémon types interact!</h2>
+            <p>Check out our <a href="#">Type Matchup Chart</a> to see a full display of how the Pokémon types stack up against one another!</p>
+            <p>Or, visit our <a href="#">Type Effectiveness Calculator</a> to find out how effective any type of move will be against any type of Pokémon!</p>
+        </div>
     </main>
 </body>
 </html>
