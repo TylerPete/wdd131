@@ -35,6 +35,7 @@ h1 {
     max-width: 100%;
     background-color: var(--tog-blue);
     padding: 1.5rem;
+    white-space: nowrap;
 }
 
 nav {
