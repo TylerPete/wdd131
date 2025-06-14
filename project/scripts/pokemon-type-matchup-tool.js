@@ -2,6 +2,8 @@ const menuButton = document.querySelector("#menu");
 menuButton.addEventListener("click", showMenu)
 const navMenu = document.querySelector(".navigation");
 
+const pokemonPic = document.querySelector("#pokemon-pic");
+
 const pokemonCaption = document.querySelector("#mon-caption");
 
 const typeIcons = document.querySelectorAll(".type-icon");
@@ -47,6 +49,11 @@ iconArray.forEach(icon => {
                 const thePokemonObj = newPokemonArray[randomNumber];
 
                 pokemonCaption.textContent = thePokemonObj.name;
+
+                //Needs fixed: pokemon with multiple forms do not have a sprite according to this format vvvv
+                pokemonPic.src = `https://img.pokemondb.net/sprites/home/normal/${thePokemonObj.name.toLowerCase()}.png`;
+                pokemonPic.alt = thePokemonObj.name;
+
             }
             else
             {
@@ -57,14 +64,6 @@ iconArray.forEach(icon => {
         {
             pokemonCaption.textContent = "Select type(s) from the list!"
         }
-
-
-
-        // const newPokemonArray = filterPokemonType(pokemon, type1, type2);
-        // let randomNumber = Math.floor(Math.random() * ((newPokemonArray.length - 1) + 1));
-        // const thePokemonObj = newPokemonArray[randomNumber];
-
-        // pokemonCaption.textContent = thePokemonObj.name;
     });
 });
 
@@ -541,9 +540,9 @@ const pokemon = [
   { name: "Feebas", type: "Water" },
   { name: "Milotic", type: "Water" },
   { name: "Castform", type: "Normal" },
-  { name: "Castform (Sunny)", type: "Fire" },
-  { name: "Castform (Rainy)", type: "Water" },
-  { name: "Castform (Snowy)", type: "Ice" },
+  { name: "Castform-Sunny", type: "Fire" },
+  { name: "Castform-Rainy", type: "Water" },
+  { name: "Castform-Snowy", type: "Ice" },
   { name: "Kecleon", type: "Normal" },
   { name: "Shuppet", type: "Ghost" },
   { name: "Banette", type: "Ghost" },
@@ -589,9 +588,9 @@ const pokemon = [
   { name: "Rayquaza (Mega)", type: "Dragon/Flying" },
   { name: "Jirachi", type: "Steel/Psychic" },
   { name: "Deoxys", type: "Psychic" },
-  { name: "Deoxys (Attack)", type: "Psychic" },
-  { name: "Deoxys (Defense)", type: "Psychic" },
-  { name: "Deoxys (Speed)", type: "Psychic" },
+  { name: "Deoxys-Attack", type: "Psychic" },
+  { name: "Deoxys-Defense", type: "Psychic" },
+  { name: "Deoxys-Speed", type: "Psychic" },
   { name: "Turtwig", type: "Grass" },
   { name: "Grotle", type: "Grass" },
   { name: "Torterra", type: "Grass/Ground" },
@@ -618,12 +617,12 @@ const pokemon = [
   { name: "Shieldon", type: "Rock/Steel" },
   { name: "Bastiodon", type: "Rock/Steel" },
   { name: "Burmy", type: "Bug" },
-  { name: "Burmy (Plant)", type: "Bug/Grass" },
-  { name: "Burmy (Sandy)", type: "Bug/Ground" },
-  { name: "Burmy (Trash)", type: "Bug/Steel" },
+  { name: "Burmy-Plant", type: "Bug/Grass" },
+  { name: "Burmy-Sandy", type: "Bug/Ground" },
+  { name: "Burmy-Trash", type: "Bug/Steel" },
   { name: "Wormadam", type: "Bug/Grass" },
-  { name: "Wormadam (Sandy)", type: "Bug/Ground" },
-  { name: "Wormadam (Trash)", type: "Bug/Steel" },
+  { name: "Wormadam-Sandy", type: "Bug/Ground" },
+  { name: "Wormadam-Trash", type: "Bug/Steel" },
   { name: "Mothim", type: "Bug/Flying" },
   { name: "Combee", type: "Bug/Flying" },
   { name: "Vespiquen", type: "Bug/Flying" },
@@ -696,11 +695,11 @@ const pokemon = [
   { name: "Dusknoir", type: "Ghost" },
   { name: "Froslass", type: "Ice/Ghost" },
   { name: "Rotom", type: "Electric/Ghost" },
-  { name: "Rotom (Heat)", type: "Electric/Fire" },
-  { name: "Rotom (Wash)", type: "Electric/Water" },
-  { name: "Rotom (Frost)", type: "Electric/Ice" },
-  { name: "Rotom (Fan)", type: "Electric/Flying" },
-  { name: "Rotom (Mow)", type: "Electric/Grass" },
+  { name: "Rotom-Heat", type: "Electric/Fire" },
+  { name: "Rotom-Wash", type: "Electric/Water" },
+  { name: "Rotom-Frost", type: "Electric/Ice" },
+  { name: "Rotom-Fan", type: "Electric/Flying" },
+  { name: "Rotom-Mow", type: "Electric/Grass" },
   { name: "Uxie", type: "Psychic" },
   { name: "Mesprit", type: "Psychic" },
   { name: "Azelf", type: "Psychic" },
@@ -709,13 +708,13 @@ const pokemon = [
   { name: "Heatran", type: "Fire/Steel" },
   { name: "Regigigas", type: "Normal" },
   { name: "Giratina", type: "Ghost/Dragon" },
-  { name: "Giratina (Origin)", type: "Ghost/Dragon" },
+  { name: "Giratina-Origin", type: "Ghost/Dragon" },
   { name: "Cresselia", type: "Psychic" },
   { name: "Phione", type: "Water" },
   { name: "Manaphy", type: "Water" },
   { name: "Darkrai", type: "Dark" },
   { name: "Shaymin", type: "Grass" },
-  { name: "Shaymin (Sky)", type: "Grass/Flying" },
+  { name: "Shaymin-Sky", type: "Grass/Flying" },
   { name: "Arceus", type: "Normal" },
   { name: "Victini", type: "Psychic/Fire" },
   { name: "Snivy", type: "Grass" },
@@ -775,8 +774,8 @@ const pokemon = [
   { name: "Whimsicott", type: "Grass/Fairy" },
   { name: "Petilil", type: "Grass" },
   { name: "Lilligant", type: "Grass" },
-  { name: "Basculin (Red-Striped)", type: "Water" },
-  { name: "Basculin (Blue-Striped)", type: "Water" },
+  { name: "Basculin-Red-Striped", type: "Water" },
+  { name: "Basculin-Blue-Striped", type: "Water" },
   { name: "Sandile", type: "Ground/Dark" },
   { name: "Krokorok", type: "Ground/Dark" },
   { name: "Krookodile", type: "Ground/Dark" },
@@ -873,20 +872,20 @@ const pokemon = [
   { name: "Terrakion", type: "Rock/Fighting" },
   { name: "Virizion", type: "Grass/Fighting" },
   { name: "Tornadus", type: "Flying" },
-  { name: "Tornadus (Therian)", type: "Flying" },
+  { name: "Tornadus-Therian", type: "Flying" },
   { name: "Thundurus", type: "Electric/Flying" },
-  { name: "Thundurus (Therian)", type: "Electric/Flying" },
+  { name: "Thundurus-Therian", type: "Electric/Flying" },
   { name: "Reshiram", type: "Dragon/Fire" },
   { name: "Zekrom", type: "Dragon/Electric" },
   { name: "Landorus", type: "Ground/Flying" },
-  { name: "Landorus (Therian)", type: "Ground/Flying" },
+  { name: "Landorus-Therian", type: "Ground/Flying" },
   { name: "Kyurem", type: "Dragon/Ice" },
-  { name: "Kyurem (Black)", type: "Dragon/Ice" },
-  { name: "Kyurem (White)", type: "Dragon/Ice" },
+  { name: "Kyurem-Black", type: "Dragon/Ice" },
+  { name: "Kyurem-White", type: "Dragon/Ice" },
   { name: "Keldeo", type: "Water/Fighting" },
-  { name: "Keldeo (Resolute)", type: "Water/Fighting" },
+  { name: "Keldeo-Resolute", type: "Water/Fighting" },
   { name: "Meloetta", type: "Normal/Psychic" },
-  { name: "Meloetta (Pirouette)", type: "Normal/Fighting" },
+  { name: "Meloetta-Pirouette", type: "Normal/Fighting" },
   { name: "Genesect", type: "Bug/Steel" },
   { name: "Chespin", type: "Grass" },
   { name: "Quilladin", type: "Grass" },
@@ -920,8 +919,8 @@ const pokemon = [
   { name: "Meowstic (Female)", type: "Psychic" },
   { name: "Honedge", type: "Steel/Ghost" },
   { name: "Doublade", type: "Steel/Ghost" },
-  { name: "Aegislash (Shield)", type: "Steel/Ghost" },
-  { name: "Aegislash (Blade)", type: "Steel/Ghost" },
+  { name: "Aegislash-Shield", type: "Steel/Ghost" },
+  { name: "Aegislash-Blade", type: "Steel/Ghost" },
   { name: "Spritzee", type: "Fairy" },
   { name: "Aromatisse", type: "Fairy" },
   { name: "Swirlix", type: "Fairy" },
@@ -964,9 +963,9 @@ const pokemon = [
   { name: "Zygarde (50%)", type: "Dragon/Ground" },
   { name: "Zygarde (Complete)", type: "Dragon/Ground" },
   { name: "Diancie", type: "Rock/Fairy" },
-  { name: "Diancie (Mega)", type: "Rock/Fairy" },
-  { name: "Hoopa (Confined)", type: "Psychic/Ghost" },
-  { name: "Hoopa (Unbound)", type: "Psychic/Dark" },
+  { name: "Diancie-Mega", type: "Rock/Fairy" },
+  { name: "Hoopa-Confined", type: "Psychic/Ghost" },
+  { name: "Hoopa-Unbound", type: "Psychic/Dark" },
   { name: "Volcanion", type: "Fire/Water" },
   { name: "Rowlet", type: "Grass/Flying" },
   { name: "Dartrix", type: "Grass/Flying" },
@@ -1030,13 +1029,13 @@ const pokemon = [
   { name: "Type: Null", type: "Normal" },
   { name: "Silvally", type: "Normal" }, // Note: Silvally's type changes depending on memory held; only Normal base
   { name: "Silvally (varied types)", type: "Varies" }, // To keep it simple, note that its type depends on held item
-  { name: "Minior (Core)", type: "Rock/Flying" },
-  { name: "Minior (Meteor)", type: "Rock/Flying" },
+  { name: "Minior-Core", type: "Rock/Flying" },
+  { name: "Minior-Meteor", type: "Rock/Flying" },
   { name: "Komala", type: "Normal" },
   { name: "Turtonator", type: "Fire/Dragon" },
   { name: "Togedemaru", type: "Electric/Steel" },
-  { name: "Mimikyu (Disguised)", type: "Ghost/Fairy" },
-  { name: "Mimikyu (Busted)", type: "Ghost/Fairy" },
+  { name: "Mimikyu-Disguised", type: "Ghost/Fairy" },
+  { name: "Mimikyu-Busted", type: "Ghost/Fairy" },
   { name: "Bruxish", type: "Water/Psychic" },
   { name: "Drampa", type: "Normal/Dragon" },
   { name: "Dhelmise", type: "Ghost/Grass" },
@@ -1059,9 +1058,9 @@ const pokemon = [
   { name: "Kartana", type: "Grass/Steel" },
   { name: "Guzzlord", type: "Dark/Dragon" },
   { name: "Necrozma", type: "Psychic" },
-  { name: "Necrozma (Dusk Mane)", type: "Psychic/Steel" },
-  { name: "Necrozma (Dawn Wings)", type: "Psychic/Ghost" },
-  { name: "Necrozma (Ultra)", type: "Psychic/Dragon" },
+  { name: "Necrozma-Dusk-Mane", type: "Psychic/Steel" },
+  { name: "Necrozma-Dawn-Wings", type: "Psychic/Ghost" },
+  { name: "Necrozma-Ultra", type: "Psychic/Dragon" },
   { name: "Magearna", type: "Steel/Fairy" },
   { name: "Marshadow", type: "Fighting/Ghost" },
   { name: "Poipole", type: "Poison" },
@@ -1135,12 +1134,12 @@ const pokemon = [
   { name: "Snom", type: "Ice/Bug" },
   { name: "Frosmoth", type: "Ice/Bug" },
   { name: "Stonjourner", type: "Rock" },
-  { name: "Eiscue (Ice Face)", type: "Ice" },
-  { name: "Eiscue (No Ice Face)", type: "Ice" },
-  { name: "Indeedee (Male)", type: "Psychic/Normal" },
-  { name: "Indeedee (Female)", type: "Psychic/Normal" },
-  { name: "Morpeko (Full Belly)", type: "Electric/Dark" },
-  { name: "Morpeko (Hangry)", type: "Electric/Dark" },
+  { name: "Eiscue-Ice", type: "Ice" },
+  { name: "Eiscue-NoIce", type: "Ice" },
+  { name: "Indeedee-Male", type: "Psychic/Normal" },
+  { name: "Indeedee-Female", type: "Psychic/Normal" },
+  { name: "Morpeko-Full -elly", type: "Electric/Dark" },
+  { name: "Morpeko-Hangry", type: "Electric/Dark" },
   { name: "Cufant", type: "Steel" },
   { name: "Copperajah", type: "Steel" },
   { name: "Dracozolt", type: "Electric/Dragon" },
@@ -1151,14 +1150,15 @@ const pokemon = [
   { name: "Dreepy", type: "Dragon/Ghost" },
   { name: "Drakloak", type: "Dragon/Ghost" },
   { name: "Dragapult", type: "Dragon/Ghost" },
-  { name: "Zacian (Hero of Many Battles)", type: "Fairy" },
-  { name: "Zacian (Crowned Sword)", type: "Fairy/Steel" },
-  { name: "Zamazenta (Hero of Many Battles)", type: "Fighting" },
-  { name: "Zamazenta (Crowned Shield)", type: "Fighting/Steel" },
+  { name: "Zacian-Hero", type: "Fairy" },
+  { name: "Zacian-Crowned", type: "Fairy/Steel" },
+  { name: "Zamazenta-Hero", type: "Fighting" },
+  { name: "Zamazenta-Crowned", type: "Fighting/Steel" },
   { name: "Eternatus", type: "Poison/Dragon" },
+  { name: "Eternatus-Eternamax", type: "Poison/Dragon" },
   { name: "Kubfu", type: "Fighting" },
-  { name: "Urshifu (Single Strike)", type: "Fighting/Dark" },
-  { name: "Urshifu (Rapid Strike)", type: "Fighting/Water" },
+  { name: "Urshifu-Single-Strike)", type: "Fighting/Dark" },
+  { name: "Urshifu-Rapid-Strike", type: "Fighting/Water" },
   { name: "Zarude", type: "Dark/Grass" },
   { name: "Regieleki", type: "Electric" },
   { name: "Regidrago", type: "Dragon" },
