@@ -1,6 +1,6 @@
 const menuButton = document.querySelector("#menu");
 menuButton.addEventListener("click", showMenu)
-const navMenu = document.querySelector(".navigation");
+const navMenu = document.querySelector("#navigation");
 
 const pokemonPic = document.querySelector("#pokemon-pic");
 
@@ -80,7 +80,7 @@ function filterPokemonType(pokemonArr, type1, type2="")
 function showMenu()
 {
     navMenu.classList.toggle("open");
-    menuButton.classList.toggle("open");
+    menuButton.classList.toggle("x");
 }
 
 
