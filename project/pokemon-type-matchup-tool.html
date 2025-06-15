@@ -1,37 +1,43 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="author" content="Tyler Peterson">
-    <meta name="description" content="The home page for the Pokemon Type Matchup Tool--a website designed as a resource for Pokemon players and fans looking to understand how Pokemon type advantages work.">
+    <meta name="description"
+        content="The home page for the Pokemon Type Matchup Tool--a website designed as a resource for Pokemon players and fans looking to understand how Pokemon type advantages work.">
     <title>Pokémon Type Matchup Tool | Home</title>
 
     <link rel="stylesheet" href="styles/pokemon-type-matchup-tool.css">
     <script src="scripts/pokemon-type-matchup-tool.js" defer></script>
 </head>
+
 <body>
     <header>
         <h1>Pokémon Type Matchup Tool</h1>
         <button id="menu" title="Navigation menu hamburger button"></button>
         <nav>
             <ul id="navigation">
-                <li>Home   </li>
-                <li>Type Chart   </li>
-                <li>Calculator   </li>
+                <li>Home </li>
+                <li>Type Chart </li>
+                <li>Calculator </li>
             </ul>
         </nav>
     </header>
     <main>
         <div class="normal-div">
             <h2>What are Pokémon types?</h2>
-            <p>A Pokémon's (or Pokémon move's) type is a classification that determines its strengths and weaknesses against Pokémon or moves of other types. It is usually related to the Pokémon's physical appearance, design, and/or behavior.</p>
+            <p>A Pokémon's (or Pokémon move's) type is a classification that determines its strengths and weaknesses
+                against Pokémon or moves of other types. It is usually related to the Pokémon's physical appearance,
+                design, and/or behavior.</p>
         </div>
-        
+
         <div id="eighteen-types-container">
             <div id="eighteen-types-paragraph" class="normal-div">
                 <h2 id="eighteen-types-heading">How many types are there, and what are they?</h2>
-                <p>There are 18 different types of Pokémon, which are listed below. Click on one or two type(s) to see an example of a Pokémon of the type(s) selected.</p>
+                <p>There are 18 different types of Pokémon, which are listed below. Click on one or two type(s) to see
+                    an example of a Pokémon of the type(s) selected.</p>
             </div>
             <div id="type-grid">
                 <img class="type-icon" src="images/type-icons/BugIC.png" alt="Bug" loading="lazy">
@@ -54,7 +60,9 @@
                 <img class="type-icon" src="images/type-icons/WaterIC.png" alt="Water" loading="lazy">
             </div>
             <figure id="pokemon-example">
-                <img id="pokemon-pic" src="https://archives.bulbagarden.net/media/upload/0/00/Bag_Pok%C3%A9_Ball_SV_Sprite.png" alt="Pokeball" loading="lazy">
+                <img id="pokemon-pic"
+                    src="https://archives.bulbagarden.net/media/upload/0/00/Bag_Pok%C3%A9_Ball_SV_Sprite.png"
+                    alt="Pokeball" loading="lazy">
                 <figcaption id="mon-caption">Select type(s) from the list!</figcaption>
             </figure>
         </div>
@@ -63,9 +71,12 @@
         </div>
         <div class="normal-div">
             <h2>Learn how different Pokémon types interact!</h2>
-            <p>Check out our <a href="#">Type Matchup Chart</a> to see a full display of how the Pokémon types stack up against one another!</p>
-            <p>Or, visit our <a href="#">Type Effectiveness Calculator</a> to find out how effective any type of move will be against any type of Pokémon!</p>
+            <p>Check out our <a href="#">Type Matchup Chart</a> to see a full display of how the Pokémon types stack up
+                against one another!</p>
+            <p>Or, visit our <a href="#">Type Effectiveness Calculator</a> to find out how effective any type of move
+                will be against any type of Pokémon!</p>
         </div>
     </main>
 </body>
+
 </html>
