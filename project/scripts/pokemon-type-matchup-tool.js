@@ -2,6 +2,10 @@ const menuButton = document.querySelector("#menu");
 menuButton.addEventListener("click", showMenu)
 const navMenu = document.querySelector("#navigation");
 
+const currentYear = document.querySelector(".current-year");
+const today = new Date();
+currentYear.textContent = `${today.getFullYear()}`;
+
 const pokemonPic = document.querySelector("#pokemon-pic");
 
 const pokemonCaption = document.querySelector("#mon-caption");

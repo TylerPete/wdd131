@@ -29,6 +29,21 @@ header {
     grid-template-rows: auto auto;
 }
 
+.footer-paragraph {
+    font-family: Lato, sans-serif;
+    font-size: 0.9rem;
+    text-align: center;
+    background-color: var(--tog-blue);
+    padding: 0.9rem;
+    color: var(--tog-cream);
+    margin-top: 5rem;
+    margin-bottom: 0;
+}
+
+.current-year {
+    background-color: var(--tog-blue);
+}
+
 h1 {
     font-size: clamp(6px, 5vw, 32px);
     color: var(--tog-cream);
