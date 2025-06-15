@@ -50,7 +50,6 @@ iconArray.forEach(icon => {
 
                 pokemonCaption.textContent = thePokemonObj.name;
 
-                //Needs fixed: pokemon with multiple forms do not have a sprite according to this format vvvv
                 pokemonPic.src = `https://img.pokemondb.net/sprites/home/normal/${thePokemonObj.name.toLowerCase()}.png`;
                 pokemonPic.alt = thePokemonObj.name;
 
@@ -69,6 +68,21 @@ iconArray.forEach(icon => {
             pokemonPic.alt = "Pokeball"
         }
     });
+});
+
+window.addEventListener("resize", () => {
+    if (window.innerWidth >= 640)
+    {
+        if (navMenu.classList.contains("open"))
+        {
+            navMenu.classList.remove("open");
+
+        }
+        if (menuButton.classList.contains("x"))
+        {
+            menuButton.classList.remove("x");
+        }
+    }
 });
 
 function filterPokemonType(pokemonArr, type1, type2="")
