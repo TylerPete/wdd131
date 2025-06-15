@@ -755,7 +755,7 @@ const pokemon = [
   { name: "Scrafty", type: "Dark/Fighting" },
   { name: "Sigilyph", type: "Psychic/Flying" },
   { name: "Yamask", type: "Ghost" },
-  { name: "Yamask-Galarian)", type: "Ground/Ghost" },
+  { name: "Yamask-Galarian", type: "Ground/Ghost" },
   { name: "Cofagrigus", type: "Ghost" },
   { name: "Tirtouga", type: "Water/Rock" },
   { name: "Carracosta", type: "Water/Rock" },
