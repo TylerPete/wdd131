@@ -199,13 +199,13 @@ figcaption {
     border: 2px solid var(--tog-blue);
     border-radius: 6px;
     width: 88%;
-    min-width: 295px;
+    min-width: 290px;
 }
 
 fieldset {
     background-color: inherit;
     margin-bottom: 1rem;
-    min-width: 275px;
+    min-width: 270px;
     width: 95%;
 }
 
@@ -217,7 +217,7 @@ label {
 
 select {
     display: block;
-    min-width: 250px;
+    min-width: 245px;
     width: 70%;
 }
 
@@ -237,7 +237,7 @@ select, option {
     font-family: Lato, sans-serif;
     margin: 1rem;
     padding: 0.5rem 0;
-    min-width: 250px;
+    min-width: 245px;
     width: 67%;
     color: var(--tog-cream);
     box-sizing: border-box;
