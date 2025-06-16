@@ -193,7 +193,11 @@ figcaption {
 }
 
 #calculator-form {
-    /* declarations for calculator here */
+    background-color: var(--tog-cream);
+    padding: 1rem;
+    margin: 1rem;
+    border: 2px solid var(--tog-blue);
+    border-radius: 6px;
 }
 
 /* Non-mobile CSS (for larger screens) below:  */
