@@ -220,6 +220,7 @@ select {
     min-width: 245px;
     width: 70%;
     margin-bottom: 16px;
+    height: 2.5rem;
 }
 
 legend {

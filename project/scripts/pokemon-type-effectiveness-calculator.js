@@ -11,24 +11,24 @@ calculatorForm.addEventListener("submit", processCalculation);
 
 
 const types = [
-    { type: "Bug"},
-    { type: "Dark"},
-    { type: "Dragon"},
-    { type: "Electric"},
-    { type: "Fairy"},
-    { type: "Fighting"},
-    { type: "Fire"},
-    { type: "Flying"},
-    { type: "Ghost"},
-    { type: "Grass"},
-    { type: "Ground"},
-    { type: "Ice"},
-    { type: "Normal"},
-    { type: "Poison"},
-    { type: "Psychic"},
-    { type: "Rock"},
-    { type: "Steel"},
-    { type: "Water"}
+    { type: "Bug", super: ["Grass", "Psychic", "Dark"], notvery: ["Fire", "Fighting", "Poison", "Flying", "Ghost", "Steel", "Fairy"], noeffect: []},
+    { type: "Dark", super: ["Psychic", "Ghost"], notvery: ["Fighting", "Dark", "Fairy"], noeffect: []},
+    { type: "Dragon", super: ["Dragon"], notvery: ["Steel"], noeffect: ["Fairy"]},
+    { type: "Electric", super: ["Water", "Flying"], notvery: ["Electric", "Grass", "Dragon"], noeffect: ["Ground"]},
+    { type: "Fairy", super: ["Fighting", "Dragon", "Dark"], notvery: ["Fire", "Poison", "Steel"], noeffect: []},
+    { type: "Fighting", super: ["Normal", "Ice", "Rock", "Dark", "Steel"], notvery: ["Poison", "Flying", "Psychic", "Bug", "Fairy"], noeffect: ["Ghost"]},
+    { type: "Fire", super: ["Grass", "Ice", "Bug", "Steel"], notvery: ["Fire", "Water", "Rock", "Dragon"], noeffect: []},
+    { type: "Flying", super: ["Grass", "Fighting", "Bug"], notvery: ["Electric", "Rock", "Steel"], noeffect: []},
+    { type: "Ghost", super: ["Psychic", "Ghost"], notvery: ["Dark"], noeffect: ["Normal"]},
+    { type: "Grass", super: ["Water", "Ground", "Rock"], notvery: ["Fire", "Grass", "Poison", "Flying", "Bug", "Dragon", "Steel"], noeffect: []},
+    { type: "Ground", super: ["Fire", "Electric", "Poison", "Rock", "Steel"], notvery: ["Grass", "Bug"], noeffect: ["Flying"]},
+    { type: "Ice", super: ["Grass", "Ground", "Flying", "Dragon"], notvery: ["Fire", "Water", "Ice", "Steel"], noeffect: []},
+    { type: "Normal", super: [], notvery: ["Rock", "Steel"], noeffect: ["Ghost"]},
+    { type: "Poison", super: ["Grass", "Fairy"], notvery: ["Poison", "Ground", "Rock", "Ghost"], noeffect: ["Steel"]},
+    { type: "Psychic", super: ["Fighting", "Poison"], notvery: ["Psychic", "Steel"], noeffect: ["Dark"]},
+    { type: "Rock", super: ["Fire", "Ice", "Flying", "Bug"], notvery: ["Fighting", "Ground", "Steel"], noeffect: []},
+    { type: "Steel", super: ["Ice", "Rock", "Fairy"], notvery: ["Fire", "Water", "Electric", "Steel"], noeffect: []},
+    { type: "Water", super: ["Fire", "Ground", "Rock"], notvery: ["Water", "Grass", "Dragon"], noeffect: []}
 ]
 
 const moveType = document.querySelector("#move-type-select");
@@ -74,8 +74,44 @@ defType1.addEventListener("change", function() {
 function processCalculation(event) {
     event.preventDefault();
 
-    //more code for generating and adding a damage calculation card to the array
-    //  in the display div... or whatever
+    let attackType = moveType.value;
+    let defenseType1 = defType1.value;
+    let defenseType2 = defType2.value;
+
+    let damageModifier = 1;
+
+    let theTypeFromArray = types.find(type => type.type == attackType);
+
+    if (theTypeFromArray["super"].includes(defenseType1))
+    {
+        damageModifier = damageModifier * 2;
+    }
+    else if (theTypeFromArray["notvery"].includes(defenseType1))
+    {
+        damageModifier = damageModifier / 2;
+    }
+    else if (theTypeFromArray["noeffect"].includes(defenseType1))
+    {
+        damageModifier = 0;
+    }
+
+    if (defenseType2 != "")
+    {
+        if (theTypeFromArray["super"].includes(defenseType2))
+        {
+            damageModifier = damageModifier * 2;
+        }
+        else if (theTypeFromArray["notvery"].includes(defenseType2))
+        {
+            damageModifier = damageModifier / 2;
+        }
+        else if (theTypeFromArray["noeffect"].includes(defenseType2))
+        {
+            damageModifier = 0;
+        }
+    }
+
+    console.log(`Damage Modifier: ${damageModifier}`);
 }
 
 window.addEventListener("resize", () => {
@@ -92,7 +128,6 @@ window.addEventListener("resize", () => {
         }
     }
 });
-
 
 
 function showMenu() {
