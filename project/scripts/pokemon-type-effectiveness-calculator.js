@@ -9,33 +9,34 @@ currentYear.textContent = `${today.getFullYear()}`;
 const calculatorForm = document.querySelector("#calculator-form");
 calculatorForm.addEventListener("submit", processCalculation);
 
+const resultsDiv = document.querySelector("#calc-results");
 
 const types = [
-    { type: "Bug", super: ["Grass", "Psychic", "Dark"], notvery: ["Fire", "Fighting", "Poison", "Flying", "Ghost", "Steel", "Fairy"], noeffect: []},
-    { type: "Dark", super: ["Psychic", "Ghost"], notvery: ["Fighting", "Dark", "Fairy"], noeffect: []},
-    { type: "Dragon", super: ["Dragon"], notvery: ["Steel"], noeffect: ["Fairy"]},
-    { type: "Electric", super: ["Water", "Flying"], notvery: ["Electric", "Grass", "Dragon"], noeffect: ["Ground"]},
-    { type: "Fairy", super: ["Fighting", "Dragon", "Dark"], notvery: ["Fire", "Poison", "Steel"], noeffect: []},
-    { type: "Fighting", super: ["Normal", "Ice", "Rock", "Dark", "Steel"], notvery: ["Poison", "Flying", "Psychic", "Bug", "Fairy"], noeffect: ["Ghost"]},
-    { type: "Fire", super: ["Grass", "Ice", "Bug", "Steel"], notvery: ["Fire", "Water", "Rock", "Dragon"], noeffect: []},
-    { type: "Flying", super: ["Grass", "Fighting", "Bug"], notvery: ["Electric", "Rock", "Steel"], noeffect: []},
-    { type: "Ghost", super: ["Psychic", "Ghost"], notvery: ["Dark"], noeffect: ["Normal"]},
-    { type: "Grass", super: ["Water", "Ground", "Rock"], notvery: ["Fire", "Grass", "Poison", "Flying", "Bug", "Dragon", "Steel"], noeffect: []},
-    { type: "Ground", super: ["Fire", "Electric", "Poison", "Rock", "Steel"], notvery: ["Grass", "Bug"], noeffect: ["Flying"]},
-    { type: "Ice", super: ["Grass", "Ground", "Flying", "Dragon"], notvery: ["Fire", "Water", "Ice", "Steel"], noeffect: []},
-    { type: "Normal", super: [], notvery: ["Rock", "Steel"], noeffect: ["Ghost"]},
-    { type: "Poison", super: ["Grass", "Fairy"], notvery: ["Poison", "Ground", "Rock", "Ghost"], noeffect: ["Steel"]},
-    { type: "Psychic", super: ["Fighting", "Poison"], notvery: ["Psychic", "Steel"], noeffect: ["Dark"]},
-    { type: "Rock", super: ["Fire", "Ice", "Flying", "Bug"], notvery: ["Fighting", "Ground", "Steel"], noeffect: []},
-    { type: "Steel", super: ["Ice", "Rock", "Fairy"], notvery: ["Fire", "Water", "Electric", "Steel"], noeffect: []},
-    { type: "Water", super: ["Fire", "Ground", "Rock"], notvery: ["Water", "Grass", "Dragon"], noeffect: []}
+    { type: "Bug", super: ["Grass", "Psychic", "Dark"], notvery: ["Fire", "Fighting", "Poison", "Flying", "Ghost", "Steel", "Fairy"], noeffect: [] },
+    { type: "Dark", super: ["Psychic", "Ghost"], notvery: ["Fighting", "Dark", "Fairy"], noeffect: [] },
+    { type: "Dragon", super: ["Dragon"], notvery: ["Steel"], noeffect: ["Fairy"] },
+    { type: "Electric", super: ["Water", "Flying"], notvery: ["Electric", "Grass", "Dragon"], noeffect: ["Ground"] },
+    { type: "Fairy", super: ["Fighting", "Dragon", "Dark"], notvery: ["Fire", "Poison", "Steel"], noeffect: [] },
+    { type: "Fighting", super: ["Normal", "Ice", "Rock", "Dark", "Steel"], notvery: ["Poison", "Flying", "Psychic", "Bug", "Fairy"], noeffect: ["Ghost"] },
+    { type: "Fire", super: ["Grass", "Ice", "Bug", "Steel"], notvery: ["Fire", "Water", "Rock", "Dragon"], noeffect: [] },
+    { type: "Flying", super: ["Grass", "Fighting", "Bug"], notvery: ["Electric", "Rock", "Steel"], noeffect: [] },
+    { type: "Ghost", super: ["Psychic", "Ghost"], notvery: ["Dark"], noeffect: ["Normal"] },
+    { type: "Grass", super: ["Water", "Ground", "Rock"], notvery: ["Fire", "Grass", "Poison", "Flying", "Bug", "Dragon", "Steel"], noeffect: [] },
+    { type: "Ground", super: ["Fire", "Electric", "Poison", "Rock", "Steel"], notvery: ["Grass", "Bug"], noeffect: ["Flying"] },
+    { type: "Ice", super: ["Grass", "Ground", "Flying", "Dragon"], notvery: ["Fire", "Water", "Ice", "Steel"], noeffect: [] },
+    { type: "Normal", super: [], notvery: ["Rock", "Steel"], noeffect: ["Ghost"] },
+    { type: "Poison", super: ["Grass", "Fairy"], notvery: ["Poison", "Ground", "Rock", "Ghost"], noeffect: ["Steel"] },
+    { type: "Psychic", super: ["Fighting", "Poison"], notvery: ["Psychic", "Steel"], noeffect: ["Dark"] },
+    { type: "Rock", super: ["Fire", "Ice", "Flying", "Bug"], notvery: ["Fighting", "Ground", "Steel"], noeffect: [] },
+    { type: "Steel", super: ["Ice", "Rock", "Fairy"], notvery: ["Fire", "Water", "Electric", "Steel"], noeffect: [] },
+    { type: "Water", super: ["Fire", "Ground", "Rock"], notvery: ["Water", "Grass", "Dragon"], noeffect: [] }
 ]
 
 const moveType = document.querySelector("#move-type-select");
 const defType1 = document.querySelector("#defense-type-select");
 const defType2 = document.querySelector("#defense-type-select2");
 
-types.forEach(function(type) {
+types.forEach(function (type) {
     const moveTypeOption = document.createElement("option");
     moveTypeOption.value = type.type;
     moveTypeOption.textContent = type.type;
@@ -49,11 +50,11 @@ types.forEach(function(type) {
 });
 
 
-defType1.addEventListener("change", function() {
+defType1.addEventListener("change", function () {
     defType2.replaceChildren();
 
     const secondTypeOptionArray = types.filter(type => type.type != defType1.value);
-    
+
     const defaultSelectOption = document.createElement("option");
     defaultSelectOption.value = "";
     defaultSelectOption.textContent = "Select...";
@@ -61,7 +62,7 @@ defType1.addEventListener("change", function() {
     defaultSelectOption.selected = true;
     defType2.appendChild(defaultSelectOption);
 
-    secondTypeOptionArray.forEach(function(type) {
+    secondTypeOptionArray.forEach(function (type) {
 
         const defType2Option = document.createElement("option");
         defType2Option.value = type.type;
@@ -82,31 +83,24 @@ function processCalculation(event) {
 
     let theTypeFromArray = types.find(type => type.type == attackType);
 
-    if (theTypeFromArray["super"].includes(defenseType1))
-    {
+    if (theTypeFromArray["super"].includes(defenseType1)) {
         damageModifier = damageModifier * 2;
     }
-    else if (theTypeFromArray["notvery"].includes(defenseType1))
-    {
+    else if (theTypeFromArray["notvery"].includes(defenseType1)) {
         damageModifier = damageModifier / 2;
     }
-    else if (theTypeFromArray["noeffect"].includes(defenseType1))
-    {
+    else if (theTypeFromArray["noeffect"].includes(defenseType1)) {
         damageModifier = 0;
     }
 
-    if (defenseType2 != "")
-    {
-        if (theTypeFromArray["super"].includes(defenseType2))
-        {
+    if (defenseType2 != "") {
+        if (theTypeFromArray["super"].includes(defenseType2)) {
             damageModifier = damageModifier * 2;
         }
-        else if (theTypeFromArray["notvery"].includes(defenseType2))
-        {
+        else if (theTypeFromArray["notvery"].includes(defenseType2)) {
             damageModifier = damageModifier / 2;
         }
-        else if (theTypeFromArray["noeffect"].includes(defenseType2))
-        {
+        else if (theTypeFromArray["noeffect"].includes(defenseType2)) {
             damageModifier = 0;
         }
     }
@@ -115,15 +109,12 @@ function processCalculation(event) {
 }
 
 window.addEventListener("resize", () => {
-    if (window.innerWidth >= 640)
-    {
-        if (navMenu.classList.contains("open"))
-        {
+    if (window.innerWidth >= 640) {
+        if (navMenu.classList.contains("open")) {
             navMenu.classList.remove("open");
 
         }
-        if (menuButton.classList.contains("x"))
-        {
+        if (menuButton.classList.contains("x")) {
             menuButton.classList.remove("x");
         }
     }

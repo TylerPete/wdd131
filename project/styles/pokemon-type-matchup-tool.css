@@ -229,7 +229,8 @@ legend {
     font-size: 0.8rem;
 }
 
-select, option {
+select,
+option {
     font-family: "Pokemon B/W";
     padding: 0.5rem 0;
     font-size: 1.5rem;
@@ -246,7 +247,37 @@ select, option {
     font-family: "Pokemon B/W";
     font-size: 1.5rem;
     background-image: linear-gradient(to top left, var(--tog-red), var(--tog-dark-red));
+    border-radius: 6px;
+}
 
+#calc-results {
+    display: flex;
+    flex-flow: row wrap;
+}
+
+.effectiveness-card {
+    border: 3px solid var(--tog-dark-red);
+    background-color: var(--tog-cream);
+    margin: 1px;
+    font-family: "Pokemon B/W";
+    padding: 1rem;
+}
+
+.effectiveness-card>h3,
+.effectiveness-card>p,
+.effectiveness-card>p>span {
+    background-color: inherit;
+    font-family: inherit;
+}
+
+.effectiveness-heading {
+    font-size: 1.3rem;
+    margin: 0 0 0.5rem 0;
+}
+
+.effectiveness-statement {
+    font-size: 1.2rem;
+    margin: 0;
 }
 
 /* Non-mobile CSS (for larger screens) below:  */

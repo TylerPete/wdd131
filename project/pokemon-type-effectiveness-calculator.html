@@ -11,7 +11,8 @@
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,400;0,700;0,900;1,400;1,900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,400;0,700;0,900;1,400;1,900&display=swap"
+        rel="stylesheet">
     <link rel="stylesheet" href="styles/pokemon-type-matchup-tool.css">
     <script src="scripts/pokemon-type-effectiveness-calculator.js" defer></script>
 </head>
@@ -58,9 +59,12 @@
             </fieldset>
             <input id="calculate-button" type="submit" value="Calculate Damage Modifier">
         </form>
-        
-        <div id="calc-results">
 
+        <div id="calc-results">
+            <div class="effectiveness-card">
+                <h3 class="effectiveness-heading">Test heading</h3>
+                <p class="effectiveness-statement">It's super effective! (x<span class="modifier">4</span> damage)</p>
+            </div>
         </div>
     </main>
     <footer>
