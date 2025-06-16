@@ -9,6 +9,68 @@ currentYear.textContent = `${today.getFullYear()}`;
 const calculatorForm = document.querySelector("#calculator-form");
 calculatorForm.addEventListener("submit", processCalculation);
 
+
+const types = [
+    { type: "Bug"},
+    { type: "Dark"},
+    { type: "Dragon"},
+    { type: "Electric"},
+    { type: "Fairy"},
+    { type: "Fighting"},
+    { type: "Fire"},
+    { type: "Flying"},
+    { type: "Ghost"},
+    { type: "Grass"},
+    { type: "Ground"},
+    { type: "Ice"},
+    { type: "Normal"},
+    { type: "Poison"},
+    { type: "Psychic"},
+    { type: "Rock"},
+    { type: "Steel"},
+    { type: "Water"}
+]
+
+const moveType = document.querySelector("#move-type-select");
+const defType1 = document.querySelector("#defense-type-select");
+const defType2 = document.querySelector("#defense-type-select2");
+
+types.forEach(function(type) {
+    const moveTypeOption = document.createElement("option");
+    moveTypeOption.value = type.type;
+    moveTypeOption.textContent = type.type;
+
+    const defTypeOption = document.createElement("option");
+    defTypeOption.value = type.type;
+    defTypeOption.textContent = type.type;
+
+    moveType.appendChild(moveTypeOption);
+    defType1.appendChild(defTypeOption);
+});
+
+
+defType1.addEventListener("change", function() {
+    defType2.replaceChildren();
+
+    const secondTypeOptionArray = types.filter(type => type.type != defType1.value);
+    
+    const defaultSelectOption = document.createElement("option");
+    defaultSelectOption.value = "";
+    defaultSelectOption.textContent = "Select...";
+    defaultSelectOption.disabled = true;
+    defaultSelectOption.selected = true;
+    defType2.appendChild(defaultSelectOption);
+
+    secondTypeOptionArray.forEach(function(type) {
+
+        const defType2Option = document.createElement("option");
+        defType2Option.value = type.type;
+        defType2Option.textContent = type.type;
+
+        defType2.appendChild(defType2Option);
+    });
+})
+
 function processCalculation(event) {
     event.preventDefault();
 
@@ -38,26 +100,6 @@ function showMenu() {
     menuButton.classList.toggle("x");
 }
 
-const types = [
-    { type: "Bug"},
-    { type: "Dark"},
-    { type: "Dragon"},
-    { type: "Electric"},
-    { type: "Fairy"},
-    { type: "Fighting"},
-    { type: "Fire"},
-    { type: "Flying"},
-    { type: "Ghost"},
-    { type: "Grass"},
-    { type: "Ground"},
-    { type: "Ice"},
-    { type: "Normal"},
-    { type: "Poison"},
-    { type: "Psychic"},
-    { type: "Rock"},
-    { type: "Steel"},
-    { type: "Water"}
-]
 
 
 //MASSIVE array of objects to represent Pokemon, to be
