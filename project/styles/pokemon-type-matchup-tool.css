@@ -90,12 +90,19 @@ nav {
 
 #navigation li {
     padding: 0.45rem 0;
-    text-decoration: none;
     font-size: 20px;
     width: 100%;
     color: var(--tog-cream);
     background-color: var(--tog-red);
     white-space: pre;
+}
+
+#navigation>li>a {
+    text-decoration: none;
+    background-color: inherit;
+    font-family: Lato, sans-serif;
+    color: var(--tog-cream);
+    font-size: 20px;
 }
 
 #navigation li:hover {
@@ -183,6 +190,10 @@ figcaption {
 
 #navigation.open {
     display: block;
+}
+
+#calculator-form {
+    /* declarations for calculator here */
 }
 
 /* Non-mobile CSS (for larger screens) below:  */
