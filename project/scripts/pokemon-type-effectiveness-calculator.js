@@ -153,6 +153,9 @@ function getCSSBorderImageString(damageModifier, attackType, defenseType1, defen
 
     switch (damageModifier)
     {
+        case 0:
+            theTransitionPoint = 6;
+            break;
         case 0.25:
             theTransitionPoint = 12.5;
             break;
