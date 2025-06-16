@@ -198,11 +198,15 @@ figcaption {
     margin: 1rem;
     border: 2px solid var(--tog-blue);
     border-radius: 6px;
+    width: 88%;
+    min-width: 295px;
 }
 
 fieldset {
     background-color: inherit;
     margin-bottom: 1rem;
+    min-width: 275px;
+    width: 95%;
 }
 
 label {
@@ -213,7 +217,7 @@ label {
 
 select {
     display: block;
-    min-width: 300px;
+    min-width: 250px;
     width: 70%;
 }
 
@@ -233,14 +237,14 @@ select, option {
     font-family: Lato, sans-serif;
     margin: 1rem;
     padding: 0.5rem 0;
-    min-width: 300px;
+    min-width: 250px;
     width: 67%;
     color: var(--tog-cream);
     box-sizing: border-box;
     font-family: "Pokemon B/W";
     font-size: 1.5rem;
     background-image: linear-gradient(to top left, var(--tog-red), var(--tog-dark-red));
-    
+
 }
 
 /* Non-mobile CSS (for larger screens) below:  */
