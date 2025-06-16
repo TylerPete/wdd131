@@ -32,12 +32,32 @@ window.addEventListener("resize", () => {
 });
 
 
+
 function showMenu() {
     navMenu.classList.toggle("open");
     menuButton.classList.toggle("x");
 }
 
-
+const types = [
+    { type: "Bug"},
+    { type: "Dark"},
+    { type: "Dragon"},
+    { type: "Electric"},
+    { type: "Fairy"},
+    { type: "Fighting"},
+    { type: "Fire"},
+    { type: "Flying"},
+    { type: "Ghost"},
+    { type: "Grass"},
+    { type: "Ground"},
+    { type: "Ice"},
+    { type: "Normal"},
+    { type: "Poison"},
+    { type: "Psychic"},
+    { type: "Rock"},
+    { type: "Steel"},
+    { type: "Water"}
+]
 
 
 //MASSIVE array of objects to represent Pokemon, to be
