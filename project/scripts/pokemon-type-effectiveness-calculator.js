@@ -105,7 +105,73 @@ function processCalculation(event) {
         }
     }
 
+    addEffectivenessCard(damageModifier, attackType, defenseType1, defenseType2);
+    
     console.log(`Damage Modifier: ${damageModifier}`);
+}
+
+function addEffectivenessCard(damageModifier, attackType, defenseType1, defenseType2 = "")
+{
+    const newCard = document.createElement("div");
+    newCard.classList.add("effectiveness-card");
+
+    let cardInnerHTML = `<h3 class="effectiveness-heading">${attackType} → ${defenseType1}`;
+    if (defenseType2 != "")
+    {
+        cardInnerHTML += `/${defenseType2}`;
+    }
+    cardInnerHTML += `</h3>\n<p class="effectiveness-statement">`;
+
+    if (damageModifier == 0)
+    {
+        cardInnerHTML += `It has no effect. `;
+    }
+    else if (damageModifier == 0.25 || damageModifier == 0.5)
+    {
+        cardInnerHTML += `It's not very effective. `;
+    }
+    else if (damageModifier == 1)
+    {
+        cardInnerHTML += `It's regularly effective. `;
+    }
+    else if (damageModifier == 2 || damageModifier == 4)
+    {
+        cardInnerHTML += `It's super effective! `;
+    }
+
+    cardInnerHTML += `(x<span class="modifier">${damageModifier}</span> damage)</p>`;
+    newCard.innerHTML = cardInnerHTML;
+    borderImageValueString = getCSSBorderImageString(damageModifier, attackType, defenseType1, defenseType2);
+    newCard.style.borderImage = borderImageValueString;
+    
+    resultsDiv.prepend(newCard);
+}
+
+function getCSSBorderImageString(damageModifier, attackType, defenseType1, defenseType2 = "")
+{
+    let theTransitionPoint;
+
+    switch (damageModifier)
+    {
+        case 0.25:
+            theTransitionPoint = 12.5;
+            break;
+        case 0.5:
+            theTransitionPoint = 25;
+            break;
+        case 1:
+            theTransitionPoint = 50;
+            break;
+        case 2:
+            theTransitionPoint = 75;
+            break;
+        case 4:
+            theTransitionPoint = 87.5;
+            break;
+    }
+
+    let theGradient = `linear-gradient(to right, var(--${attackType.toLowerCase()}) ${theTransitionPoint - 5}%, ${theTransitionPoint}%, var(--${defenseType1.toLowerCase()}) ${theTransitionPoint + 5}%) 1`;
+    return theGradient;
 }
 
 window.addEventListener("resize", () => {

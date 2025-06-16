@@ -1,10 +1,31 @@
 :root {
+    /* General palette for styling */
     --tog-blue: #4464a4;
     --tog-cream: #F2ECE6;
     --tog-red: #BF3D3D;
     --tog-dark-red: #862b2b;
     --tog-black: #0F1A2A;
     --white: #ffffff;
+
+    /* Type colors for "Effectiveness Cards"*/
+    --bug: #91C12F;
+    --dark: #5A5465;
+    --dragon: #0B6DC3;
+    --electric: #F4D23C;
+    --fairy: #EC8FE6;
+    --fighting: #CE416B;
+    --fire: #FF9D55;
+    --flying: #8FA9DE;
+    --ghost: #5269AD;
+    --grass: #63BC5A;
+    --ground: #D97845;
+    --ice: #73CEC0;
+    --normal: #919AA2;
+    --poison: #AA6BC8;
+    --psychic: #FA7179;
+    --rock: #C5B78C;
+    --steel: #5A8EA2;
+    --water: #5090D6;
 }
 
 * {
@@ -255,12 +276,30 @@ option {
     flex-flow: row wrap;
 }
 
+@keyframes slide-down {
+    from {
+        transform: translateY(-1.75rem);
+    }
+    to {
+        transform: translateY(0);
+    }
+}
+
 .effectiveness-card {
-    border: 3px solid var(--tog-dark-red);
+    border: 1rem solid transparent;
+    /* border-image: linear-gradient(to right, var(--bug) 62%, 67%, var(--psychic) 72%) 1; */
     background-color: var(--tog-cream);
     margin: 1px;
     font-family: "Pokemon B/W";
     padding: 1rem;
+    margin: 1rem;
+
+    transition: transform 0.15s ease-in-out;
+    animation: slide-down 0.25s;
+}
+
+.effectiveness-card:hover {
+    transform: scale(1.1);
 }
 
 .effectiveness-card>h3,
