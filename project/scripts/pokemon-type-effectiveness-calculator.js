@@ -11,6 +11,22 @@ calculatorForm.addEventListener("submit", processCalculation);
 
 const resultsDiv = document.querySelector("#calc-results");
 
+let cardsArray = getCardsArray() || [];
+cardsArray.forEach(card => displayCard(card));
+
+
+function getCardsArray() {
+    return JSON.parse(localStorage.getItem("myEffectivenessCardsArray"));
+}
+
+function displayCard(card) {
+    //card should be a const object constaining the entire <div> element with h3, p, and span
+}
+
+function setCardsArrayToLocalStorage() {
+    localStorage.setItem("myEffectivenessCardsArray", JSON.stringify(cardsArray));
+}
+
 const types = [
     { type: "Bug", super: ["Grass", "Psychic", "Dark"], notvery: ["Fire", "Fighting", "Poison", "Flying", "Ghost", "Steel", "Fairy"], noeffect: [] },
     { type: "Dark", super: ["Psychic", "Ghost"], notvery: ["Fighting", "Dark", "Fairy"], noeffect: [] },
@@ -145,6 +161,7 @@ function addEffectivenessCard(damageModifier, attackType, defenseType1, defenseT
     newCard.style.borderImage = borderImageValueString;
     
     resultsDiv.prepend(newCard);
+    // cardsArray.prepend(newCard);
 }
 
 function getCSSBorderImageString(damageModifier, attackType, defenseType1, defenseType2 = "")
