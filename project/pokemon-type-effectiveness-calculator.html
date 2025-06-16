@@ -9,6 +9,9 @@
         content="The Pokemon Type Matchup Tool's Type Effectiveness Calculator--Determine how effective a given type of move will be on any type(s) of Pokemon.">
     <title>Pokémon Type Effectiveness Calculator</title>
 
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,400;0,700;0,900;1,400;1,900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="styles/pokemon-type-matchup-tool.css">
     <script src="scripts/pokemon-type-effectiveness-calculator.js" defer></script>
 </head>
@@ -28,7 +31,83 @@
 
     <main>
         <form id="calculator-form">
-            <label><input type="submit" value="Calculate Damage"></label>
+            <fieldset>
+                <legend>Attacking Pokémon</legend>
+                <label>Move type
+                    <select id="move-type-select">
+                        <option value="" selected disabled>Select...</option>
+                        <option value="Bug">Bug</option>
+                        <option value="Dark">Dark</option>
+                        <option value="Dragon">Dragon</option>
+                        <option value="Electric">Electric</option>
+                        <option value="Fairy">Fairy</option>
+                        <option value="Fighting">Fighting</option>
+                        <option value="Fire">Fire</option>
+                        <option value="Flying">Flying</option>
+                        <option value="Ghost">Ghost</option>
+                        <option value="Grass">Grass</option>
+                        <option value="Ground">Ground</option>
+                        <option value="Ice">Ice</option>
+                        <option value="Normal">Normal</option>
+                        <option value="Poison">Poison</option>
+                        <option value="Psychic">Psychic</option>
+                        <option value="Rock">Rock</option>
+                        <option value="Steel">Steel</option>
+                        <option value="Water">Water</option>
+                    </select>
+                </label>
+            </fieldset>
+            <fieldset>
+                <legend>Defending Pokémon</legend>
+                <label>Type 1
+                    <select id="defense-type-select" required>
+                        <option value="" selected disabled>Select...</option>
+                        <option value="Bug">Bug</option>
+                        <option value="Dark">Dark</option>
+                        <option value="Dragon">Dragon</option>
+                        <option value="Electric">Electric</option>
+                        <option value="Fairy">Fairy</option>
+                        <option value="Fighting">Fighting</option>
+                        <option value="Fire">Fire</option>
+                        <option value="Flying">Flying</option>
+                        <option value="Ghost">Ghost</option>
+                        <option value="Grass">Grass</option>
+                        <option value="Ground">Ground</option>
+                        <option value="Ice">Ice</option>
+                        <option value="Normal">Normal</option>
+                        <option value="Poison">Poison</option>
+                        <option value="Psychic">Psychic</option>
+                        <option value="Rock">Rock</option>
+                        <option value="Steel">Steel</option>
+                        <option value="Water">Water</option>
+                    </select>
+                </label>
+
+                <label>Type 2 (Optional)
+                    <select id="defense-type-select2">
+                        <option value="" selected disabled>Select...</option>
+                        <option value="Bug">Bug</option>
+                        <option value="Dark">Dark</option>
+                        <option value="Dragon">Dragon</option>
+                        <option value="Electric">Electric</option>
+                        <option value="Fairy">Fairy</option>
+                        <option value="Fighting">Fighting</option>
+                        <option value="Fire">Fire</option>
+                        <option value="Flying">Flying</option>
+                        <option value="Ghost">Ghost</option>
+                        <option value="Grass">Grass</option>
+                        <option value="Ground">Ground</option>
+                        <option value="Ice">Ice</option>
+                        <option value="Normal">Normal</option>
+                        <option value="Poison">Poison</option>
+                        <option value="Psychic">Psychic</option>
+                        <option value="Rock">Rock</option>
+                        <option value="Steel">Steel</option>
+                        <option value="Water">Water</option>
+                    </select>
+                </label>
+            </fieldset>
+            <input id="calculate-button" type="submit" value="Calculate Damage">
         </form>
         <div id="calc-results">
 

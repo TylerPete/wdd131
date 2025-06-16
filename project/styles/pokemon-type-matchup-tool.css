@@ -200,6 +200,49 @@ figcaption {
     border-radius: 6px;
 }
 
+fieldset {
+    background-color: inherit;
+    margin-bottom: 1rem;
+}
+
+label {
+    background-color: inherit;
+    font-family: "Pokemon B/W";
+    font-size: 1.25rem;
+}
+
+select {
+    display: block;
+    min-width: 300px;
+    width: 70%;
+}
+
+legend {
+    background-color: inherit;
+    font-style: italic;
+    font-size: 0.8rem;
+}
+
+select, option {
+    font-family: "Pokemon B/W";
+    padding: 0.5rem 0;
+    font-size: 1.5rem;
+}
+
+#calculate-button {
+    font-family: Lato, sans-serif;
+    margin: 1rem;
+    padding: 0.5rem 0;
+    min-width: 300px;
+    width: 67%;
+    color: var(--tog-cream);
+    box-sizing: border-box;
+    font-family: "Pokemon B/W";
+    font-size: 1.5rem;
+    background-image: linear-gradient(to top left, var(--tog-red), var(--tog-dark-red));
+    
+}
+
 /* Non-mobile CSS (for larger screens) below:  */
 @media screen and (min-width: 640px) {
     #menu {
