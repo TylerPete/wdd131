@@ -157,7 +157,6 @@ nav {
 }
 
 #type-grid {
-    align-self: top;
     grid-column: 1 / 2;
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(60px, 100px));
@@ -293,6 +292,7 @@ option {
     font-family: "Pokemon B/W";
     padding: 1rem;
     margin: 1rem;
+    width: 150px;
 
     transition: transform 0.15s ease-in-out;
     animation: slide-down 0.25s;
@@ -359,7 +359,6 @@ option {
     #type-grid {
         width: 100%;
         max-width: 500px;
-        align-self: top;
         grid-column: 1 / 2;
         display: grid;
         grid-template-columns: repeat(auto-fit, minmax(60px, 100px));
