@@ -12,6 +12,7 @@ calculatorForm.addEventListener("submit", processCalculation);
 const resultsDiv = document.querySelector("#calc-results");
 
 let cardsArray = getCardsArray() || [];
+
 cardsArray.forEach(card => displayCard(card));
 
 
@@ -19,14 +20,22 @@ function getCardsArray() {
     let retrievedCardsStringArray = JSON.parse(window.localStorage.getItem("myEffectivenessCardsArray"));
     console.log(retrievedCardsStringArray); //
 
-    const cardNodeArray = retrievedCardsStringArray.map(function(cardString) {
-        const disposableDiv = document.createElement("div");
-        disposableDiv.innerHTML = cardString;
+    let cardNodeArray;
+    if (retrievedCardsStringArray != null)
+    {
+        const cardNodeArray = retrievedCardsStringArray.map(function(cardString) {
+            const disposableDiv = document.createElement("div");
+            disposableDiv.innerHTML = cardString;
 
-        const theCardNode = disposableDiv.firstChild;
+            const theCardNode = disposableDiv.firstChild;
 
-        return theCardNode;
-    });
+            return theCardNode;
+        });
+    }
+    else
+    {
+        cardNodeArray = null;
+    }
 
     return cardNodeArray;
 }
