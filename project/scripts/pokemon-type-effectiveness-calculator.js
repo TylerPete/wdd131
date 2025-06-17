@@ -16,15 +16,31 @@ cardsArray.forEach(card => displayCard(card));
 
 
 function getCardsArray() {
-    return JSON.parse(localStorage.getItem("myEffectivenessCardsArray"));
+    let retrievedCardsStringArray = JSON.parse(window.localStorage.getItem("myEffectivenessCardsArray"));
+    console.log(retrievedCardsStringArray); //
+
+    const cardNodeArray = retrievedCardsStringArray.map(function(cardString) {
+        const disposableDiv = document.createElement("div");
+        disposableDiv.innerHTML = cardString;
+
+        const theCardNode = disposableDiv.firstChild;
+
+        return theCardNode;
+    });
+
+    return cardNodeArray;
 }
 
 function displayCard(card) {
-    //card should be a const object constaining the entire <div> element with h3, p, and span
+    resultsDiv.appendChild(card);
 }
 
 function setCardsArrayToLocalStorage() {
-    localStorage.setItem("myEffectivenessCardsArray", JSON.stringify(cardsArray));
+    let stringRepresentationArray = cardsArray.map(function(card) {
+        return card.outerHTML;
+    });
+
+    window.localStorage.setItem("myEffectivenessCardsArray", JSON.stringify(stringRepresentationArray));
 }
 
 const types = [
@@ -161,7 +177,8 @@ function addEffectivenessCard(damageModifier, attackType, defenseType1, defenseT
     newCard.style.borderImage = borderImageValueString;
     
     resultsDiv.prepend(newCard);
-    // cardsArray.prepend(newCard);
+    cardsArray.unshift(newCard);
+    setCardsArrayToLocalStorage();
 }
 
 function getCSSBorderImageString(damageModifier, attackType, defenseType1, defenseType2 = "")
