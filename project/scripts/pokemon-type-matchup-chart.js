@@ -91,8 +91,15 @@ colorTypeCells();
 function colorTypeCells()
 {
     const attackTypeCellsNodeList2 = document.querySelectorAll(".attack-type-cell");
-    
+    const defenseTypeCellsNodeList2 = document.querySelectorAll(".defense-type-cell");
+
     for (const cell of attackTypeCellsNodeList2)
+    {
+        const theTypeString = cell.textContent;
+        cell.style.backgroundColor = `var(--${theTypeString.toLowerCase()})`;
+    }
+
+    for (const cell of defenseTypeCellsNodeList2)
     {
         const theTypeString = cell.textContent;
         cell.style.backgroundColor = `var(--${theTypeString.toLowerCase()})`;
@@ -119,6 +126,7 @@ function sortTable(attackTypeObj, resetBoolean)
     }
 
     displayEffectiveness();
+    colorTypeCells();
 
     function defenseTypeCompareFunction(defTypeObjA, defTypeObjB)
     {
