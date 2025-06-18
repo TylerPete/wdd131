@@ -92,17 +92,36 @@ function colorTypeCells()
 {
     const attackTypeCellsNodeList2 = document.querySelectorAll(".attack-type-cell");
     const defenseTypeCellsNodeList2 = document.querySelectorAll(".defense-type-cell");
+    darkColorTypes = ["Dark", "Dragon", "Ghost"];
 
     for (const cell of attackTypeCellsNodeList2)
     {
         const theTypeString = cell.textContent;
         cell.style.backgroundColor = `var(--${theTypeString.toLowerCase()})`;
+
+        if (darkColorTypes.includes(theTypeString))
+        {
+            cell.style.color = "var(--white)";
+        }
+        else
+        {
+            cell.style.color = "black";
+        }
     }
 
     for (const cell of defenseTypeCellsNodeList2)
     {
         const theTypeString = cell.textContent;
         cell.style.backgroundColor = `var(--${theTypeString.toLowerCase()})`;
+
+        if (darkColorTypes.includes(theTypeString))
+        {
+            cell.style.color = "var(--white)";
+        }
+        else
+        {
+            cell.style.color = "black";
+        }
     }
 }
 
