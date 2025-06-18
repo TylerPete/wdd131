@@ -86,6 +86,19 @@ for (const cell of attackTypeCellsNodeList)
     cell.addEventListener("click", () => sortTable(theTypeObj, false));
 }
 
+colorTypeCells();
+
+function colorTypeCells()
+{
+    const attackTypeCellsNodeList2 = document.querySelectorAll(".attack-type-cell");
+    
+    for (const cell of attackTypeCellsNodeList2)
+    {
+        const theTypeString = cell.textContent;
+        cell.style.backgroundColor = `var(--${theTypeString.toLowerCase()})`;
+    }
+}
+
 function sortTable(attackTypeObj, resetBoolean)
 {
     if (resetBoolean)
@@ -139,7 +152,7 @@ function getDamageModifier(attackTypeObj, defTypeObj)
     }
     else if (attackTypeObj.notvery.includes(defTypeObj.type))
     {
-        damageModifier = "½";
+        damageModifier = "0.5";
     }
     else if (attackTypeObj.noeffect.includes(defTypeObj.type))
     {
@@ -166,6 +179,7 @@ function displayEffectiveness()
         {
             let damageModifier = getDamageModifier(defaultOrderedTypes[innerIterationCount], types[i]);
 
+            if (damageModifier == 0.5) {damageModifier = "½"};
             cell.textContent = `${damageModifier}x`;
             styleEffectivenessCell(cell);
 

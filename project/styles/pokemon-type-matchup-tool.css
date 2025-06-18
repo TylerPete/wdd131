@@ -370,8 +370,8 @@ th {
     transform: none;
 }
 
-th:hover {
-    transform: scale(1.3);
+.attack-type-cell:hover {
+    transform: scale(1.4);
 }
 
 td {
