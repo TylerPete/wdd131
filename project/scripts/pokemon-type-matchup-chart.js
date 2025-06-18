@@ -69,20 +69,33 @@ const defaultOrderedTypes = [
     { type: "Water", super: ["Fire", "Ground", "Rock"], notvery: ["Water", "Grass", "Dragon"], noeffect: [] }
 ]
 
+function resetTable()
+{
+    sortTable(null, true);
+}
+
+displayEffectiveness();
 const tableResetButton = document.querySelector("#table-reset-button");
-// tableResetButton.addEventListener("click", resetTable()); //Implement separate function for this!!!
+tableResetButton.addEventListener("click", resetTable);
 
 const attackTypeCellsNodeList = document.querySelectorAll(".attack-type-cell");
 for (const cell of attackTypeCellsNodeList)
 {
     const theTypeObj = types.find(type => type.type == cell.textContent);
 
-    cell.addEventListener("click", () => sortTable(theTypeObj));
+    cell.addEventListener("click", () => sortTable(theTypeObj, false));
 }
 
-function sortTable(attackTypeObj)
+function sortTable(attackTypeObj, resetBoolean)
 {
-    types.sort(defenseTypeCompareFunction);
+    if (resetBoolean)
+    {
+        types.splice(0, types.length, ...defaultOrderedTypes);
+    }
+    else
+    {
+        types.sort(defenseTypeCompareFunction);
+    }
 
     const defenseTypeCellsNodeList = document.querySelectorAll(".defense-type-cell");
     
@@ -126,7 +139,7 @@ function getDamageModifier(attackTypeObj, defTypeObj)
     }
     else if (attackTypeObj.notvery.includes(defTypeObj.type))
     {
-        damageModifier = 0.5;
+        damageModifier = "½";
     }
     else if (attackTypeObj.noeffect.includes(defTypeObj.type))
     {
@@ -153,7 +166,7 @@ function displayEffectiveness()
         {
             let damageModifier = getDamageModifier(defaultOrderedTypes[innerIterationCount], types[i]);
 
-            cell.textContent = damageModifier;
+            cell.textContent = `${damageModifier}x`;
             styleEffectivenessCell(cell);
 
             innerIterationCount++;
@@ -162,22 +175,22 @@ function displayEffectiveness()
 
     function styleEffectivenessCell(cell)
     {
-        if (cell.textContent == 2)
+        if (cell.textContent == "2x")
         {
             cell.className = "";
             cell.classList.add("super-green");
         }
-        else if (cell.textContent == 0.5)
+        else if (cell.textContent == "½x")
         {
             cell.className = "";
             cell.classList.add("notvery-red");
         }
-        else if (cell.textContent == 0)
+        else if (cell.textContent == "0x")
         {
             cell.className = "";
             cell.classList.add("noeffect-black");
         }
-        else if (cell.textContent == 1)
+        else if (cell.textContent == "1x")
         {
             cell.className = "";
             cell.classList.add("regular-white");

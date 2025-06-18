@@ -339,7 +339,7 @@ table, th, td {
 
 th, td {
     padding: 0.5rem;
-    max-width: 26px;
+    max-width: 25px;
     aspect-ratio: 1/1;
     width: 5%;
 }
