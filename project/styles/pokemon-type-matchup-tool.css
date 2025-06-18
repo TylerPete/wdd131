@@ -339,12 +339,20 @@ table, th, td {
 
 th, td {
     padding: 0.5rem;
-    max-width: 30px;
+    max-width: 26px;
     aspect-ratio: 1/1;
     width: 5%;
 }
 
-th, .table-reset-cell {
+.overall-type-header {
+    font-size: 1rem;
+}
+
+.overall-type-header:hover {
+    transform: none;
+}
+
+th {
     border: 2px solid black;
     text-align: center;
     font-size: 0.5rem;
@@ -352,7 +360,7 @@ th, .table-reset-cell {
     transition: transform 0.15s ease-in-out;
 }
 
-.overall-type-header:hover {
+.table-reset-cell:hover {
     transform: none;
 }
 
@@ -367,12 +375,16 @@ td {
 
 #table-reset-button {
     width: 35%;
-    transition: transform 0.15s ease-in-out;
 }
 
 #table-reset-button:hover {
     animation: rotate 2s;
     animation-iteration-count: infinite;
+}
+
+#vertical-text {
+    writing-mode: vertical-lr;
+    transform: rotate(-180deg);
 }
 
 @keyframes rotate {
