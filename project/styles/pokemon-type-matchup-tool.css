@@ -346,6 +346,8 @@ th, td {
 
 .overall-type-header {
     font-size: 1rem;
+    background-color: var(--tog-blue);
+    color: var(--tog-cream);
 }
 
 .overall-type-header:hover {
@@ -358,6 +360,10 @@ th {
     font-size: 0.5rem;
     width: 5%;
     transition: transform 0.15s ease-in-out;
+}
+
+.table-reset-cell {
+    background-color: var(--tog-red);
 }
 
 .table-reset-cell:hover {
@@ -375,6 +381,7 @@ td {
 
 #table-reset-button {
     width: 35%;
+    background-color: inherit;
 }
 
 #table-reset-button:hover {
@@ -385,6 +392,33 @@ td {
 #vertical-text {
     writing-mode: vertical-lr;
     transform: rotate(-180deg);
+}
+
+.super-green {
+    background-color: green;
+    color: var(--white);
+    font-weight: bold;
+}
+
+.notvery-red {
+    background-color: #8b0000;
+    color: var(--white);
+    font-weight: bold;
+}
+
+.noeffect-black {
+    background-color: black;
+    color: var(--white);
+}
+
+.regular-white {
+    background-color: var(--tog-cream);
+    color: black;
+}
+
+.attack-type-cell, .defense-type-cell {
+    font-family: "Pokemon B/W";
+    font-size: 0.75rem;
 }
 
 @keyframes rotate {
