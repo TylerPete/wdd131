@@ -59,7 +59,7 @@ iconArray.forEach(icon => {
         }
         else {
             pokemonCaption.textContent = "Select type(s) from the list!"
-            pokemonPic.src = "https://archives.bulbagarden.net/media/upload/0/00/Bag_Pok%C3%A9_Ball_SV_Sprite.png";
+            pokemonPic.src = "images/pokeball.webp";
             pokemonPic.alt = "Pokeball"
         }
     });

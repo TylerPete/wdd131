@@ -190,6 +190,10 @@ nav {
     align-self: center;
 }
 
+#pokemon-pic {
+    max-width: 256px;
+}
+
 figcaption {
     margin: 0;
     text-align: center;
