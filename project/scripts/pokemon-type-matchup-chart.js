@@ -22,8 +22,9 @@ window.addEventListener("resize", () => {
     }
 });
 
-
 function showMenu() {
     navMenu.classList.toggle("open");
     menuButton.classList.toggle("x");
 }
+
+// const tableResetButton = document.querySelector("#table-reset-button");

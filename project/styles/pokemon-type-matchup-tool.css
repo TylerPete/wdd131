@@ -328,6 +328,10 @@ option {
     font-weight: bold;
 }
 
+.table-container {
+    overflow-x: auto;
+}
+
 table, th, td {
     border: 1px solid black;
     border-collapse: collapse;
@@ -335,8 +339,54 @@ table, th, td {
 
 th, td {
     padding: 0.5rem;
-    text-align: center;
+    max-width: 30px;
+    aspect-ratio: 1/1;
+    width: 5%;
 }
+
+th, .table-reset-cell {
+    border: 2px solid black;
+    text-align: center;
+    font-size: 0.5rem;
+    width: 5%;
+    transition: transform 0.15s ease-in-out;
+}
+
+.overall-type-header:hover {
+    transform: none;
+}
+
+th:hover {
+    transform: scale(1.3);
+}
+
+td {
+    text-align: center;
+    font-size: 0.75rem;
+}
+
+#table-reset-button {
+    width: 35%;
+    transition: transform 0.15s ease-in-out;
+}
+
+#table-reset-button:hover {
+    animation: rotate 2s;
+    animation-iteration-count: infinite;
+}
+
+@keyframes rotate {
+    0% {
+        transform: rotate(0deg) scale(1.35);
+    }
+    87.5% {
+        transform: rotate(0deg) scale(1.35);
+    }
+    100% {
+        transform: rotate(360deg) scale(1.35);
+    }
+}
+
 
 /* Non-mobile CSS (for larger screens) below:  */
 @media screen and (min-width: 640px) {
@@ -353,7 +403,6 @@ th, td {
         list-style: none;
         text-align: center;
         justify-content: flex-start;
-        /* grid-column: 1 / 3; */
     }
 
     #navigation li {
